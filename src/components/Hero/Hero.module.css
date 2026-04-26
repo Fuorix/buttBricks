@@ -1,0 +1,104 @@
+.heroSection {
+  position: relative;
+  height: 795px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(28, 27, 27, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  max-width: var(--space-container-max);
+  padding: 0 var(--space-margin);
+  text-align: center;
+}
+
+.established {
+  color: var(--color-tertiary-fixed);
+  font-family: var(--font-family-body);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  margin-bottom: var(--space-stack-sm);
+  display: block;
+}
+
+.title {
+  color: var(--color-white);
+  margin-bottom: var(--space-stack-md);
+  max-width: 56rem; /* max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description {
+  color: var(--color-zinc-300);
+  max-width: 42rem; /* max-w-2xl */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-stack-lg);
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .buttonGroup {
+    flex-direction: row;
+  }
+}
+
+.primaryButton {
+  background-color: var(--color-primary-container);
+  color: var(--color-white);
+  padding: 16px 40px;
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  background-color: #6d2416;
+}
+
+.secondaryButton {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-white);
+  padding: 16px 40px;
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background-color: var(--color-white);
+  color: var(--color-on-background);
+}

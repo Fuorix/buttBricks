@@ -1,0 +1,130 @@
+.contactSection {
+  padding: var(--space-stack-lg) 0;
+  background-color: var(--color-surface);
+}
+
+.container {
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-margin);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-stack-lg);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+.contentColumn {
+  flex: 1;
+}
+
+.tagline {
+  color: var(--color-primary);
+  letter-spacing: 0.1em;
+}
+
+.title {
+  color: var(--color-on-background);
+  font-size: 48px;
+  line-height: 1.2;
+  margin-top: 16px;
+  margin-bottom: var(--space-stack-md);
+}
+
+.description {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-stack-md);
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.icon {
+  color: var(--color-primary);
+  padding: 12px;
+  background-color: rgba(109, 36, 22, 0.05);
+}
+
+.infoTitle {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.infoText {
+  color: var(--color-secondary);
+}
+
+.formColumn {
+  flex: 1;
+  background-color: var(--color-white);
+  padding: 48px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-zinc-100);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.formGroup {
+  position: relative;
+}
+
+.label {
+  display: block;
+  font-size: 10px;
+  color: var(--color-zinc-400);
+  margin-bottom: 4px;
+}
+
+.input, .textarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-zinc-300);
+  padding: 8px 0;
+  outline: none;
+  transition: border-color 0.3s ease;
+  color: var(--color-on-background);
+}
+
+.input:focus, .textarea:focus {
+  border-bottom-color: var(--color-primary);
+}
+
+.textarea {
+  resize: none;
+}
+
+.submitButton {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 20px;
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.submitButton:hover {
+  background-color: var(--color-on-background);
+}
