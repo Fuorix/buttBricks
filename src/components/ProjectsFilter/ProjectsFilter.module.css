@@ -1,0 +1,60 @@
+.filterSection {
+  padding: var(--space-stack-md) 0;
+}
+
+.container {
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 48px;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.filterButton {
+  padding: 12px 32px;
+  border: 1px solid rgba(28, 27, 27, 0.2);
+  background-color: transparent;
+  color: var(--color-secondary);
+  transition: border-color 0.3s ease;
+}
+
+.filterButton:hover {
+  border-color: var(--color-primary);
+}
+
+.filterButton.active {
+  background-color: var(--color-on-background);
+  color: var(--color-surface);
+  border-color: var(--color-on-background);
+}
+
+.sortContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.sortLabel {
+  /* empty */
+}
+
+.sortValue {
+  font-weight: 700;
+}

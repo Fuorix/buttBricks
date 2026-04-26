@@ -1,0 +1,36 @@
+.ctaSection {
+  padding: var(--space-stack-lg) 0;
+}
+
+.container {
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 32px;
+}
+
+.description {
+  color: var(--color-secondary);
+  margin-bottom: 48px;
+  max-width: 42rem;
+}
+
+.button {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary);
+  padding: 20px 48px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.5s ease;
+}
+
+.button:hover {
+  background-color: var(--color-tertiary);
+}
