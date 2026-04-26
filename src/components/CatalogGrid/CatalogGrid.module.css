@@ -1,0 +1,124 @@
+.gridSection {
+  margin-top: var(--space-stack-md);
+  margin-bottom: var(--space-stack-lg);
+}
+
+.masonryGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .masonryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface-container-low);
+  box-shadow: 4px 4px 0px 0px rgba(28, 28, 28, 0.05);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(28, 28, 28, 0.1);
+}
+
+.imageWrapper {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--color-surface-dim);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  color: var(--color-on-surface);
+}
+
+.badge {
+  padding: 4px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+.badgeprimary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.badgedark {
+  background-color: var(--color-on-background);
+  color: var(--color-white);
+}
+
+.badgesecondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.cardDescription {
+  color: var(--color-on-surface-variant);
+  margin-bottom: 32px;
+}
+
+.cardFooter {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(136, 114, 110, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sku {
+  color: var(--color-secondary);
+}
+
+.detailsLink {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrowIcon {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.detailsLink:hover .arrowIcon {
+  transform: translateX(4px);
+}

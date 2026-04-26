@@ -1,0 +1,41 @@
+.filterSection {
+  margin-top: var(--space-stack-md);
+  padding: 32px 0;
+}
+
+.scrollContainer {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  gap: 16px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  scroll-behavior: smooth;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.filterButton {
+  flex: none;
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
+  padding: 12px 32px;
+  font-size: 11px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.filterButton:hover {
+  background-color: var(--color-surface-container-highest);
+}
+
+.filterButton.active {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.filterButton.active:hover {
+  background-color: var(--color-primary);
+}
