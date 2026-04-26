@@ -1,0 +1,88 @@
+.mapSection {
+  margin-bottom: var(--space-stack-lg);
+}
+
+.container {
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.mapBackground {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) contrast(125%);
+  opacity: 0.8;
+  transition: opacity 0.7s ease;
+}
+
+.mapWrapper:hover .mapBackground {
+  opacity: 1;
+}
+
+.mapOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(109, 36, 22, 0.1);
+  mix-blend-mode: multiply;
+}
+
+.pinContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.pinIconWrapper {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary-container);
+  border: 4px solid var(--color-surface);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pinIcon {
+  color: #ffffff;
+}
+
+.structuralBorder {
+  position: absolute;
+  inset: 0;
+  border: 24px solid var(--color-surface);
+  pointer-events: none;
+}
+
+.visitorCard {
+  position: absolute;
+  bottom: 48px;
+  right: 48px;
+  background-color: var(--color-surface);
+  padding: 24px;
+  max-width: 20rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.visitorTitle {
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.visitorDesc {
+  color: var(--color-secondary);
+  font-size: 14px;
+}

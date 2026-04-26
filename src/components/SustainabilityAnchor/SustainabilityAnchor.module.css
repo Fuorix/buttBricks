@@ -1,0 +1,69 @@
+.anchorSection {
+  background-color: var(--color-on-background);
+  padding: var(--space-stack-lg) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.architecturalGrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, rgba(136, 114, 110, 0.2) 1px, transparent 1px);
+}
+
+.container {
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+  z-index: 10;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+  }
+}
+
+.textContent {
+  max-width: 36rem;
+}
+
+.title {
+  color: var(--color-surface);
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.description {
+  color: rgba(252, 249, 248, 0.7);
+}
+
+.iconContent {
+  display: flex;
+  gap: 16px;
+}
+
+.iconBox {
+  width: 128px;
+  height: 128px;
+  border: 1px solid rgba(252, 249, 248, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: rgba(252, 249, 248, 0.3);
+  font-size: 36px;
+}

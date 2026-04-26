@@ -1,0 +1,239 @@
+.interactionSection {
+  margin-bottom: var(--space-stack-lg);
+}
+
+.container {
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-gutter);
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+/* Form Column */
+.formColumn {
+  background-color: var(--color-surface-container-low);
+  padding: 48px;
+  border-left: 1px solid rgba(219, 193, 187, 0.2);
+  border-top: 1px solid rgba(219, 193, 187, 0.2);
+  box-shadow: 8px 8px 0px 0px rgba(28, 27, 27, 0.05);
+  /* lg:col-span-7 */
+}
+
+@media (min-width: 1024px) {
+  .formColumn {
+    grid-column: span 7 / span 7;
+  }
+}
+
+.formTitle {
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-stack-md);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .formRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  color: var(--color-secondary);
+  text-transform: uppercase;
+}
+
+.input, .select, .textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-outline);
+  outline: none;
+  padding: 12px 0;
+  color: var(--color-on-surface);
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--color-primary-container);
+}
+
+.select {
+  appearance: none;
+}
+
+.textarea {
+  resize: none;
+}
+
+.submitContainer {
+  padding-top: 32px;
+}
+
+.submitButton {
+  width: 100%;
+  background-color: var(--color-primary-container);
+  color: #ffffff;
+  padding: 24px 48px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: background-color 0.5s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--color-on-background);
+}
+
+/* Info Column */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  /* lg:col-span-5 */
+}
+
+@media (min-width: 1024px) {
+  .infoColumn {
+    grid-column: span 5 / span 5;
+  }
+}
+
+.whatsappCard {
+  background-color: var(--color-on-background);
+  color: var(--color-surface);
+  padding: 40px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.icon {
+  color: var(--color-primary-fixed);
+}
+
+.cardTitle {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(252, 249, 248, 0.1);
+  padding-bottom: 16px;
+}
+
+.contactRegion {
+  color: rgba(252, 249, 248, 0.6);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+.contactNumber {
+  font-size: 24px;
+}
+
+.arrowIcon {
+  color: var(--color-primary-fixed);
+  transition: transform 0.3s ease;
+}
+
+.contactItem:hover .arrowIcon {
+  transform: translateX(8px);
+}
+
+.hoursCard {
+  background-color: var(--color-surface-container-high);
+  padding: 40px;
+}
+
+.hoursGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.smallTitle {
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.text {
+  color: var(--color-on-surface);
+  word-break: break-all;
+}
+
+.hqCard {
+  background-color: var(--color-tertiary-fixed);
+  padding: 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hqIcon {
+  color: var(--color-primary);
+}
+
+.hqTitle {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+}
+
+.hqAddress {
+  font-size: 24px;
+  color: var(--color-on-tertiary-fixed);
+  line-height: 1.2;
+}
+
+.hqFooter {
+  margin-top: 32px;
+}
+
+.hqDesc {
+  color: var(--color-on-tertiary-fixed-variant);
+  font-size: 14px;
+}
