@@ -1,0 +1,32 @@
+.floatingContainer {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 100;
+}
+
+@media (min-width: 768px) {
+  .floatingContainer {
+    bottom: 48px;
+    right: 48px;
+  }
+}
+
+.ctaButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #25D366; /* WhatsApp Green */
+  color: #ffffff;
+  padding: 16px 32px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: scale(1.05);
+}
+
+.ctaText {
+  letter-spacing: 0.1em;
+}
