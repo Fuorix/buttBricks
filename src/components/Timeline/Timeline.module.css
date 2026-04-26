@@ -1,0 +1,76 @@
+.timelineSection {
+  background-color: #1c1917; /* stone-900 */
+  color: #f5f5f4; /* stone-100 */
+  padding: var(--space-stack-lg) 0;
+}
+
+.container {
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 64px;
+  }
+}
+
+.mainTitle {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.eventItem {
+  position: relative;
+  border-left: 1px solid #44403c; /* stone-700 */
+  padding-left: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.dot {
+  position: absolute;
+  left: -5px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #44403c; /* stone-700 */
+}
+
+.dotActive {
+  background-color: var(--color-primary);
+}
+
+.year {
+  display: block;
+  margin-bottom: 16px;
+  color: #78716c; /* stone-500 */
+  font-size: 48px; /* Using headline-lg size for year */
+}
+
+.yearActive {
+  color: var(--color-primary);
+}
+
+.eventTitle {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 18px; /* text-body-lg */
+}
+
+.eventDesc {
+  color: #a8a29e; /* stone-400 */
+}

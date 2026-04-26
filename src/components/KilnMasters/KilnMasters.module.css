@@ -1,0 +1,83 @@
+.mastersSection {
+  background-color: var(--color-surface-container-low);
+  padding: var(--space-stack-lg) 0;
+}
+
+.container {
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 64px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.imageColumn {
+  order: 2;
+}
+
+@media (min-width: 768px) {
+  .imageColumn {
+    order: 1;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.contentColumn {
+  order: 1;
+}
+
+@media (min-width: 768px) {
+  .contentColumn {
+    order: 2;
+  }
+}
+
+.title {
+  margin-bottom: 32px;
+}
+
+.description {
+  color: var(--color-on-surface-variant);
+  margin-bottom: 32px;
+  line-height: 1.625;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #d6d3d1; /* stone-300 */
+  padding-bottom: 16px;
+}
+
+.number {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.listText {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 16px; /* body-md size */
+}
