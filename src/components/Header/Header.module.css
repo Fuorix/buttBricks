@@ -1,0 +1,111 @@
+.header {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  border-bottom: 1px solid rgba(28, 28, 28, 0.1);
+  box-shadow: 2px 2px 0px 0px rgba(28, 28, 28, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    background-color: rgba(24, 24, 27, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 24px 32px;
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoIcon {
+  color: var(--color-primary-container);
+}
+
+.logoText {
+  font-size: 24px;
+  color: var(--color-primary-container);
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logoText {
+    color: #A64A38;
+  }
+}
+
+.navLinks {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navLinks {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+.navLink {
+  color: rgba(28, 28, 28, 0.6);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  .navLink {
+    color: var(--color-zinc-400);
+  }
+}
+
+.navLink:hover {
+  color: var(--color-primary-container);
+}
+
+.navLink.active {
+  color: var(--color-primary-container);
+  border-bottom-color: var(--color-primary-container);
+  font-family: var(--font-family-display);
+  font-weight: 700;
+}
+
+.ctaButton {
+  background-color: var(--color-primary-container);
+  color: var(--color-white);
+  padding: 10px 24px;
+  font-family: var(--font-family-body);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.1s ease;
+}
+
+.ctaButton:active {
+  transform: scale(0.98);
+}
