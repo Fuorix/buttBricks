@@ -1,7 +1,15 @@
 import React from 'react';
 import styles from './Products.module.css';
 
-const productData = [
+interface Product {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  tag: string | null;
+}
+
+const productData: Product[] = [
   {
     title: 'Fare Face Gutka',
     description: 'Refined thin-profile bricks for elegant facade cladding and minimalist architectural details.',
@@ -46,13 +54,13 @@ const productData = [
   }
 ];
 
-export const Products = () => {
+export const Products: React.FC = () => {
   return (
     <section className={styles.productsSection} id="products">
-      <div className="brick-grid-pattern absolute inset-0 pointer-events-none" style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0, pointerEvents: 'none', zIndex: 1 }}></div>
+      <div className={`brick-grid-pattern ${styles.patternOverlay}`} />
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={`${styles.tagline} font-label-caps`}>COLLECTIONS</span>
+          <span className={`${styles.tagline} font-label-caps`}>Collections</span>
           <h2 className={`${styles.title} font-headline-lg`}>Architectural Masonry</h2>
         </div>
         

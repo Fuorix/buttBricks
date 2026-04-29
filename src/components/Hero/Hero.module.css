@@ -1,10 +1,11 @@
 .heroSection {
   position: relative;
-  height: 795px;
+  min-height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 120px 0;
 }
 
 .heroBackground {
@@ -12,6 +13,7 @@
   inset: 0;
   background-size: cover;
   background-position: center;
+  z-index: 0;
 }
 
 .heroOverlay {
@@ -19,14 +21,19 @@
   inset: 0;
   background-color: rgba(28, 27, 27, 0.7);
   backdrop-filter: blur(2px);
+  z-index: 1;
 }
 
 .heroContent {
   position: relative;
   z-index: 10;
+  width: 100%;
   max-width: var(--space-container-max);
-  padding: 0 var(--space-margin);
+  padding: 0 var(--space-margin); 
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .established {
@@ -43,30 +50,20 @@
 .title {
   color: var(--color-white);
   margin-bottom: var(--space-stack-md);
-  max-width: 56rem; /* max-w-4xl */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 56rem;
 }
 
 .description {
   color: var(--color-zinc-300);
-  max-width: 42rem; /* max-w-2xl */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 42rem;
   margin-bottom: var(--space-stack-lg);
 }
 
 .buttonGroup {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   gap: 24px;
-}
-
-@media (min-width: 640px) {
-  .buttonGroup {
-    flex-direction: row;
-  }
 }
 
 .primaryButton {
@@ -78,16 +75,18 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 14px;
-  transition: all 0.3s ease;
+  border-radius: var(--radius-default);
+  transition: background-color 0.3s ease;
+  width: auto;
 }
 
 .primaryButton:hover {
-  background-color: #6d2416;
+  background-color: var(--color-primary);
 }
 
 .secondaryButton {
   background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--color-outline-variant);
   color: var(--color-white);
   padding: 16px 40px;
   font-family: var(--font-family-body);
@@ -95,10 +94,50 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 14px;
+  border-radius: var(--radius-default);
   transition: all 0.3s ease;
+  width: auto;
 }
 
 .secondaryButton:hover {
   background-color: var(--color-white);
   color: var(--color-on-background);
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: 600px;
+    padding: 80px 0;
+  }
+
+  .heroContent {
+    padding: 0 var(--space-gutter);
+  }
+
+  .title {
+    margin-bottom: var(--space-stack-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    min-height: 100vh;
+    padding: 64px 0;
+  }
+
+  .heroContent {
+    padding: 0 16px; 
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    gap: 16px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
 }
