@@ -1,39 +1,27 @@
 .interactionSection {
   margin-bottom: var(--space-stack-lg);
+  width: 100%;
 }
 
 .container {
   max-width: var(--space-container-max);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--space-margin);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(12, 1fr);
   gap: var(--space-gutter);
 }
 
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(12, 1fr);
-  }
-}
-
-/* Form Column */
 .formColumn {
+  grid-column: span 7;
   background-color: var(--color-surface-container-low);
   padding: 48px;
-  border-left: 1px solid rgba(219, 193, 187, 0.2);
-  border-top: 1px solid rgba(219, 193, 187, 0.2);
-  box-shadow: 8px 8px 0px 0px rgba(28, 27, 27, 0.05);
-  /* lg:col-span-7 */
-}
-
-@media (min-width: 1024px) {
-  .formColumn {
-    grid-column: span 7 / span 7;
-  }
+  border-left: 1px solid color-mix(in srgb, var(--color-outline-variant) 20%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-outline-variant) 20%, transparent);
+  box-shadow: 8px 8px 0px 0px color-mix(in srgb, var(--color-on-background) 5%, transparent);
 }
 
 .formTitle {
@@ -49,14 +37,8 @@
 
 .formRow {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
-}
-
-@media (min-width: 768px) {
-  .formRow {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .formGroup {
@@ -67,7 +49,6 @@
 
 .label {
   color: var(--color-secondary);
-  text-transform: uppercase;
 }
 
 .input, .select, .textarea {
@@ -79,6 +60,7 @@
   color: var(--color-on-surface);
   transition: border-color 0.3s ease;
   width: 100%;
+  border-radius: 0;
 }
 
 .input:focus, .select:focus, .textarea:focus {
@@ -87,6 +69,7 @@
 
 .select {
   appearance: none;
+  cursor: pointer;
 }
 
 .textarea {
@@ -94,35 +77,29 @@
 }
 
 .submitContainer {
-  padding-top: 32px;
+  padding-top: 16px;
 }
 
 .submitButton {
   width: 100%;
   background-color: var(--color-primary-container);
-  color: #ffffff;
+  color: var(--color-white);
   padding: 24px 48px;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
-  transition: background-color 0.5s ease;
+  transition: all 0.5s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .submitButton:hover {
   background-color: var(--color-on-background);
 }
 
-/* Info Column */
 .infoColumn {
+  grid-column: span 5;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  /* lg:col-span-5 */
-}
-
-@media (min-width: 1024px) {
-  .infoColumn {
-    grid-column: span 5 / span 5;
-  }
 }
 
 .whatsappCard {
@@ -143,8 +120,8 @@
 }
 
 .cardTitle {
-  text-transform: uppercase;
   letter-spacing: 0.1em;
+  color: var(--color-white);
 }
 
 .contactList {
@@ -158,19 +135,18 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  border-bottom: 1px solid rgba(252, 249, 248, 0.1);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-white) 10%, transparent);
   padding-bottom: 16px;
 }
 
 .contactRegion {
-  color: rgba(252, 249, 248, 0.6);
+  color: color-mix(in srgb, var(--color-white) 60%, transparent);
   font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.05em;
 }
 
 .contactNumber {
-  font-size: 24px;
+  color: var(--color-white);
 }
 
 .arrowIcon {
@@ -195,7 +171,6 @@
 
 .smallTitle {
   color: var(--color-secondary);
-  text-transform: uppercase;
   margin-bottom: 12px;
 }
 
@@ -218,13 +193,11 @@
 }
 
 .hqTitle {
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-primary);
 }
 
 .hqAddress {
-  font-size: 24px;
   color: var(--color-on-tertiary-fixed);
   line-height: 1.2;
 }
@@ -236,4 +209,56 @@
 .hqDesc {
   color: var(--color-on-tertiary-fixed-variant);
   font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .formColumn, .infoColumn {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-gutter);
+  }
+
+  .formColumn, .whatsappCard, .hoursCard, .hqCard {
+    padding: 32px;
+  }
+
+  .formRow {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .formColumn {
+    padding: 24px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .hoursGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contactNumber, .hqAddress {
+    font-size: 20px;
+  }
+
+  .submitButton {
+    padding: 18px 24px;
+  }
 }

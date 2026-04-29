@@ -2,7 +2,22 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './CatalogGrid.module.css';
 
-const catalogData = [
+interface Badge {
+  text: string;
+  type: 'primary' | 'dark' | 'secondary';
+}
+
+interface CatalogItem {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  badge: Badge;
+  sku: string;
+  slug: string;
+}
+
+const catalogData: CatalogItem[] = [
   {
     title: 'Fare Face Gutka',
     description: 'A classic structural choice for modern elevations. Known for its uniform texture and high compressive strength, perfect for load-bearing walls.',
@@ -41,43 +56,45 @@ const catalogData = [
   }
 ];
 
-export const CatalogGrid = () => {
+export const CatalogGrid: React.FC = () => {
   return (
     <section className={styles.gridSection}>
-      <div className={styles.masonryGrid}>
-        {catalogData.map((item, index) => (
-          <div key={index} className={styles.card}>
-            <div className={styles.imageWrapper}>
-              <img 
-                src={item.image} 
-                alt={item.alt} 
-                className={styles.image}
-                loading="lazy"
-              />
-            </div>
-            
-            <div className={styles.cardContent}>
-              <div className={styles.cardHeader}>
-                <h3 className={`${styles.cardTitle} font-headline-md`}>{item.title}</h3>
-                <span className={`${styles.badge} ${styles['badge' + item.badge.type]}`}>
-                  {item.badge.text}
-                </span>
+      <div className={styles.container}>
+        <div className={styles.masonryGrid}>
+          {catalogData.map((item, index) => (
+            <div key={index} className={styles.card}>
+              <div className={styles.imageWrapper}>
+                <img 
+                  src={item.image} 
+                  alt={item.alt} 
+                  className={styles.image}
+                  loading="lazy"
+                />
               </div>
               
-              <p className={`${styles.cardDescription} font-body-md`}>
-                {item.description}
-              </p>
-              
-              <div className={styles.cardFooter}>
-                <span className={`${styles.sku} font-label-caps`}>SKU: {item.sku}</span>
-                <Link href={`/products/${item.slug}`} className={styles.detailsLink}>
-                  View Technical Specs
-                  <span className={`material-symbols-outlined ${styles.arrowIcon}`} data-icon="arrow_forward">arrow_forward</span>
-                </Link>
+              <div className={styles.cardContent}>
+                <div className={styles.cardHeader}>
+                  <h3 className={`${styles.cardTitle} font-headline-md`}>{item.title}</h3>
+                  <span className={`${styles.badge} ${styles['badge' + item.badge.type]}`}>
+                    {item.badge.text}
+                  </span>
+                </div>
+                
+                <p className={`${styles.cardDescription} font-body-md`}>
+                  {item.description}
+                </p>
+                
+                <div className={styles.cardFooter}>
+                  <span className={`${styles.sku} font-label-caps`}>SKU: {item.sku}</span>
+                  <Link href={`/products/${item.slug}`} className={styles.detailsLink}>
+                    View Technical Specs
+                    <span className={`material-symbols-outlined ${styles.arrowIcon}`}>arrow_forward</span>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

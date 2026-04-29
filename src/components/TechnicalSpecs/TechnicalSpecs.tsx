@@ -1,7 +1,13 @@
 import React from 'react';
 import styles from './TechnicalSpecs.module.css';
 
-const specData = [
+interface SpecItem {
+  spec: string;
+  detail: string;
+  unit: string;
+}
+
+const specData: SpecItem[] = [
   { spec: 'Dimensions', detail: '9" x 1.5" x 3"', unit: 'Nominal Size' },
   { spec: 'Material Composition', detail: 'Refined Red Clay', unit: 'ASTM C67' },
   { spec: 'Surface Finish', detail: 'Smooth-Faced Architectural', unit: 'Grade SW' },
@@ -9,7 +15,7 @@ const specData = [
   { spec: 'Dry Weight', detail: '1.4 kg', unit: 'Per Unit' },
 ];
 
-export const TechnicalSpecs = () => {
+export const TechnicalSpecs: React.FC = () => {
   return (
     <section className={styles.specsSection}>
       <div className={styles.container}>

@@ -1,11 +1,12 @@
 .mapSection {
   margin-bottom: var(--space-stack-lg);
+  width: 100%;
 }
 
 .container {
   max-width: var(--space-container-max);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--space-margin);
 }
 
 .mapWrapper {
@@ -13,6 +14,7 @@
   width: 100%;
   height: 500px;
   overflow: hidden;
+  background-color: var(--color-surface-dim);
 }
 
 .mapBackground {
@@ -20,19 +22,20 @@
   inset: 0;
   background-size: cover;
   background-position: center;
-  filter: grayscale(100%) contrast(125%);
-  opacity: 0.8;
-  transition: opacity 0.7s ease;
+  filter: grayscale(100%) contrast(110%);
+  opacity: 0.7;
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .mapWrapper:hover .mapBackground {
-  opacity: 1;
+  opacity: 0.9;
+  transform: scale(1.02);
 }
 
 .mapOverlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(109, 36, 22, 0.1);
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
   mix-blend-mode: multiply;
 }
 
@@ -41,48 +44,98 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: none;
+  z-index: 2;
 }
 
 .pinIconWrapper {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   background-color: var(--color-primary-container);
-  border: 4px solid var(--color-surface);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 4px solid var(--color-white);
+  box-shadow: 0 20px 40px -10px color-mix(in srgb, var(--color-on-background) 30%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .pinIcon {
-  color: #ffffff;
+  color: var(--color-white);
+  font-size: 32px;
 }
 
 .structuralBorder {
   position: absolute;
   inset: 0;
-  border: 24px solid var(--color-surface);
+  border: 24px solid var(--color-surface-container-lowest);
   pointer-events: none;
+  z-index: 1;
 }
 
 .visitorCard {
   position: absolute;
   bottom: 48px;
   right: 48px;
-  background-color: var(--color-surface);
+  background-color: var(--color-white);
   padding: 24px;
-  max-width: 20rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  max-width: 22rem;
+  box-shadow: 8px 8px 0px 0px color-mix(in srgb, var(--color-on-background) 5%, transparent);
+  z-index: 3;
 }
 
 .visitorTitle {
   color: var(--color-primary);
-  text-transform: uppercase;
   margin-bottom: 8px;
 }
 
 .visitorDesc {
   color: var(--color-secondary);
-  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .mapWrapper {
+    height: 400px;
+  }
+  
+  .structuralBorder {
+    border-width: 16px;
+  }
+  
+  .visitorCard {
+    bottom: 32px;
+    right: 32px;
+    max-width: 18rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-gutter);
+  }
+  
+  .visitorCard {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    margin-top: -16px; /* Overlap the bottom border slightly */
+    border: 1px solid var(--color-outline-variant);
+  }
+  
+  .structuralBorder {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .mapWrapper {
+    height: 300px;
+  }
+  
+  .visitorCard {
+    padding: 20px;
+  }
 }
