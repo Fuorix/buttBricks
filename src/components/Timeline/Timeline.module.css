@@ -10,12 +10,6 @@
   padding: 0 32px;
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding: 0 64px;
-  }
-}
-
 .mainTitle {
   text-align: center;
   margin-bottom: 80px;
@@ -25,12 +19,6 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
-}
-
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .eventItem {
@@ -73,4 +61,60 @@
 
 .eventDesc {
   color: #a8a29e; /* stone-400 */
+}
+
+@media (min-width: 480px) {
+  .container {
+    padding: 0 48px;
+  }
+  .year {
+    font-size: 36px;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 64px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .mainTitle {
+    margin-bottom: 60px;
+  }
+  .year {
+    font-size: 40px;
+  }
+  .eventTitle {
+    font-size: 20px;
+  }
+}
+
+/* Desktop (1024px - 1279px) */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .container {
+    padding: 0 80px;
+  }
+  .year {
+    font-size: 48px;
+  }
+  .mainTitle {
+    margin-bottom: 80px;
+  }
+}
+
+/* Large Desktop (1280px and above) */
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 80px;
+  }
+  .grid {
+    gap: 48px;
+  }
 }

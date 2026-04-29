@@ -34,12 +34,6 @@
   color: #ffffff;
 }
 
-@media (min-width: 768px) {
-  .contentContainer {
-    padding: 0 64px;
-  }
-}
-
 .tagline {
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -69,13 +63,55 @@
   justify-content: center;
 }
 
-@media (min-width: 768px) {
-  .scrollIndicator {
-    display: flex;
-  }
-}
-
 .scrollIndicator span {
   color: #ffffff;
   font-size: 36px;
+}
+
+@media (max-width: 767px) {
+  .heroSection {
+    height: 500px;
+  }
+  
+  .title {
+    font-size: 32px;
+  }
+  
+  .scrollIndicator {
+    display: none;
+  }
+}
+
+/* Tablet (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroSection {
+    height: 650px;
+  }
+  
+  .scrollIndicator {
+    display: flex;
+    width: 112px;
+    height: 112px;
+  }
+  
+  .title {
+    font-size: 52px;
+  }
+}
+
+/* Desktop (1024px and above) */
+@media (min-width: 1024px) {
+  .heroSection {
+    height: 707px;
+  }
+  
+  .scrollIndicator {
+    display: flex;
+    width: 128px;
+    height: 128px;
+  }
+  
+  .title {
+    font-size: 64px;
+  }
 }
