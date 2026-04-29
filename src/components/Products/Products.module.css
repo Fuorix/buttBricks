@@ -5,6 +5,13 @@
   overflow: hidden;
 }
 
+.patternOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .container {
   max-width: var(--space-container-max);
   margin: 0 auto;
@@ -20,6 +27,7 @@
 .tagline {
   color: var(--color-primary);
   letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .title {
@@ -29,20 +37,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 48px;
-}
-
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .card {
@@ -56,12 +52,12 @@
   overflow: hidden;
   position: relative;
   margin-bottom: var(--space-stack-sm);
-  box-shadow: 8px 8px 0px 0px rgba(139, 58, 42, 0.1);
+  box-shadow: 8px 8px 0px 0px color-mix(in srgb, var(--color-primary-container) 10%, transparent);
   transition: all 0.3s ease;
 }
 
 .card:hover .imageWrapper {
-  box-shadow: 12px 12px 0px 0px rgba(139, 58, 42, 0.2);
+  box-shadow: 12px 12px 0px 0px color-mix(in srgb, var(--color-primary-container) 20%, transparent);
 }
 
 .image {
@@ -97,4 +93,30 @@
 
 .cardDescription {
   color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  .productsSection {
+    padding: var(--space-stack-md) 0;
+  }
+
+  .container {
+    padding: 0 var(--space-gutter);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-gutter);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-stack-md);
+  }
 }
