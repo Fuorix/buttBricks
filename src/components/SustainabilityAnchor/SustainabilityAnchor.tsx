@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './SustainabilityAnchor.module.css';
 
-export const SustainabilityAnchor = () => {
+export const SustainabilityAnchor: React.FC = () => {
   return (
     <section className={styles.anchorSection}>
       <div className={styles.architecturalGrid}></div>
@@ -15,10 +15,10 @@ export const SustainabilityAnchor = () => {
           </div>
           <div className={styles.iconContent}>
             <div className={styles.iconBox}>
-              <span className={`material-symbols-outlined ${styles.icon}`} data-icon="eco">eco</span>
+              <span className={`material-symbols-outlined ${styles.icon}`}>eco</span>
             </div>
             <div className={styles.iconBox}>
-              <span className={`material-symbols-outlined ${styles.icon}`} data-icon="diamond">diamond</span>
+              <span className={`material-symbols-outlined ${styles.icon}`}>diamond</span>
             </div>
           </div>
         </div>

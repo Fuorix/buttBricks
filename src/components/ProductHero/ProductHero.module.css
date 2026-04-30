@@ -1,27 +1,22 @@
 .heroSection {
   margin-top: var(--space-stack-lg);
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+}
+
+.container {
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-margin);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   gap: var(--space-gutter);
 }
 
-@media (min-width: 1024px) {
-  .heroSection {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-  }
-}
-
 .imageColumn {
+  grid-column: span 7;
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-@media (min-width: 1024px) {
-  .imageColumn {
-    grid-column: span 7 / span 7;
-  }
 }
 
 .mainImageWrapper {
@@ -56,11 +51,12 @@
 .moreOverlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(109, 36, 22, 0.4);
+  background-color: color-mix(in srgb, var(--color-primary) 60%, transparent);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
+  opacity: 0.85;
   transition: opacity 0.3s ease;
 }
 
@@ -69,24 +65,18 @@
 }
 
 .contentColumn {
+  grid-column: span 5;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: var(--space-stack-md);
-  padding-top: 16px;
-}
-
-@media (min-width: 1024px) {
-  .contentColumn {
-    grid-column: span 5 / span 5;
-  }
 }
 
 .titleSection {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border-left: 1px solid rgba(109, 36, 22, 0.2);
+  border-left: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
   padding-left: 32px;
 }
 
@@ -101,11 +91,10 @@
 
 .description {
   color: var(--color-secondary);
-  max-width: 28rem;
 }
 
 .featuresSection {
-  padding-top: var(--space-stack-md);
+  padding-top: var(--space-stack-sm);
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -138,28 +127,63 @@
 }
 
 .actionSection {
-  padding-top: 32px;
+  padding-top: 16px;
 }
 
 .inquireButton {
   width: 100%;
   background-color: var(--color-primary);
-  color: var(--color-on-primary);
+  color: var(--color-white);
   padding: 24px 0;
   font-family: var(--font-family-body);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.1s ease;
-  box-shadow: 4px 4px 0px 0px rgba(28, 28, 28, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 4px 4px 0px 0px color-mix(in srgb, var(--color-on-background) 20%, transparent);
+  border: none;
+  cursor: pointer;
 }
 
 .inquireButton:hover {
-  background-color: var(--color-on-primary-fixed-variant);
+  background-color: var(--color-on-background);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px color-mix(in srgb, var(--color-primary) 40%, transparent);
 }
 
-.inquireButton:active {
-  box-shadow: none;
-  transform: translate(4px, 4px);
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: var(--space-stack-lg);
+  }
+  
+  .imageColumn, .contentColumn {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-gutter);
+  }
+  
+  .titleSection {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .thumbnailGrid {
+    gap: 8px;
+  }
+  
+  .inquireButton {
+    padding: 20px 0;
+    font-size: 14px;
+  }
 }

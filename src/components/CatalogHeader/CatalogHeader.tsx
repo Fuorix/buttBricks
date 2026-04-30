@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CatalogHeader.module.css';
 
-export const CatalogHeader = () => {
+export const CatalogHeader: React.FC = () => {
   return (
     <section className={styles.catalogHeaderSection}>
       <div className={styles.content}>
@@ -12,7 +12,7 @@ export const CatalogHeader = () => {
         </p>
       </div>
       <div className={styles.accentLineContainer}>
-        <div className={styles.accentLine}></div>
+        <div className={styles.accentLine} />
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ContactMap.module.css';
 
-export const ContactMap = () => {
+export const ContactMap: React.FC = () => {
   return (
     <section className={styles.mapSection}>
       <div className={styles.container}>
@@ -13,7 +13,12 @@ export const ContactMap = () => {
           <div className={styles.mapOverlay}></div>
           <div className={styles.pinContainer}>
             <div className={styles.pinIconWrapper}>
-              <span className={`material-symbols-outlined ${styles.pinIcon}`} data-icon="home_pin" data-weight="fill" style={{ fontVariationSettings: "'FILL' 1" }}>home_pin</span>
+              <span 
+                className={`material-symbols-outlined ${styles.pinIcon}`}
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                home_pin
+              </span>
             </div>
           </div>
           
@@ -21,7 +26,9 @@ export const ContactMap = () => {
           
           <div className={styles.visitorCard}>
             <p className={`${styles.visitorTitle} font-label-caps`}>Visitor Access</p>
-            <p className={`${styles.visitorDesc} font-body-md`}>Site visits available by appointment only. Please schedule through the inquiry form.</p>
+            <p className={`${styles.visitorDesc} font-body-md`}>
+              Site visits available by appointment only. Please schedule through the inquiry form.
+            </p>
           </div>
         </div>
       </div>

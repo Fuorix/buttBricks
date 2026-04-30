@@ -3,35 +3,36 @@
   margin-bottom: var(--space-stack-lg);
 }
 
-.masonryGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+.container {
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-margin);
 }
 
-@media (min-width: 768px) {
-  .masonryGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.masonryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   background-color: var(--color-surface-container-low);
-  box-shadow: 4px 4px 0px 0px rgba(28, 28, 28, 0.05);
+  box-shadow: 4px 4px 0px 0px color-mix(in srgb, var(--color-on-background) 5%, transparent);
   border: 1px solid transparent;
   transition: all 0.3s ease;
+  border-radius: 0;
 }
 
 .card:hover {
-  border-color: rgba(28, 28, 28, 0.1);
+  border-color: color-mix(in srgb, var(--color-on-background) 10%, transparent);
 }
 
 .imageWrapper {
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background-color: var(--color-surface-dim);
+  background-color: var(--color-surface-container-highest);
 }
 
 .image {
@@ -57,10 +58,12 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 16px;
+  gap: 16px;
 }
 
 .cardTitle {
   color: var(--color-on-surface);
+  margin: 0;
 }
 
 .badge {
@@ -68,12 +71,14 @@
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.05em;
+  border-radius: 0;
+  white-space: nowrap;
 }
 
 .badgeprimary {
   background-color: var(--color-primary);
-  color: var(--color-on-primary);
+  color: var(--color-white);
 }
 
 .badgedark {
@@ -94,7 +99,7 @@
 .cardFooter {
   margin-top: auto;
   padding-top: 24px;
-  border-top: 1px solid rgba(136, 114, 110, 0.3);
+  border-top: 1px solid color-mix(in srgb, var(--color-secondary) 20%, transparent);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -112,6 +117,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none;
 }
 
 .arrowIcon {
@@ -121,4 +127,36 @@
 
 .detailsLink:hover .arrowIcon {
   transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+  .masonryGrid {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-gutter);
+  }
+
+  .masonryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .cardContent {
+    padding: 24px;
+  }
+
+  .cardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }
