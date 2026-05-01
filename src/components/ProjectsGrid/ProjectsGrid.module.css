@@ -8,36 +8,14 @@
   padding: 0 32px;
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding: 0 48px;
-  }
-}
-
 .masonryGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
 }
 
-@media (min-width: 768px) {
-  .masonryGrid {
-    grid-template-columns: repeat(12, 1fr);
-  }
-}
-
 .card {
   cursor: pointer;
-}
-
-.cardLarge {
-  /* md:col-span-8 */
-}
-
-@media (min-width: 768px) {
-  .cardLarge {
-    grid-column: span 8 / span 8;
-  }
 }
 
 .cardSide {
@@ -46,21 +24,9 @@
   flex-direction: column;
 }
 
-@media (min-width: 768px) {
-  .cardSide {
-    grid-column: span 4 / span 4;
-  }
-}
-
 .cardStandard {
   /* md:col-span-6 */
   margin-top: var(--space-stack-md);
-}
-
-@media (min-width: 768px) {
-  .cardStandard {
-    grid-column: span 6 / span 6;
-  }
 }
 
 .imageWrapper {
@@ -144,4 +110,22 @@
   font-size: 36px;
   color: var(--color-primary);
   margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 48px;
+  }
+  .masonryGrid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+   .cardLarge {
+    grid-column: span 8 / span 8;
+  }
+  .cardSide {
+    grid-column: span 4 / span 4;
+  }
+  .cardStandard {
+    grid-column: span 6 / span 6;
+  }
 }

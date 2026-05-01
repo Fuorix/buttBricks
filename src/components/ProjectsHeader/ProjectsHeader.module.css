@@ -9,24 +9,11 @@
   padding: 0 32px;
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding: 0 48px;
-  }
-}
-
 .content {
   display: flex;
   flex-direction: column;
   gap: 32px;
   align-items: flex-end;
-}
-
-@media (min-width: 768px) {
-  .content {
-    flex-direction: row;
-    justify-content: space-between;
-  }
 }
 
 .textContainer {
@@ -55,14 +42,63 @@
   display: none;
 }
 
-@media (min-width: 768px) {
-  .accentLineContainer {
-    display: block;
-  }
-}
-
 .accentLine {
   height: 128px;
   width: 1px;
   background-color: rgba(28, 27, 27, 0.2);
+}
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .accentLineContainer {
+    display: block;
+  }
+  .container {
+    padding: 0 48px;
+  }
+  .textContainer {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 64px;
+  }
+  .textContainer {
+    max-width: 48rem;
+  }
+  .accentLine {
+    height: 160px;
+  }
+  .tagline {
+    letter-spacing: 0.4em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .headerSection {
+    padding: var(--space-stack-xl) 0;
+  }
+  .container {
+    padding: 0 32px;
+  }
+  .accentLine {
+    height: 192px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .textContainer {
+    max-width: 56rem;
+  }
+  .title {
+    font-size: 3.5rem;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+  }
 }
