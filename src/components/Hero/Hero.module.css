@@ -1,11 +1,13 @@
 .heroSection {
   position: relative;
-  min-height: 800px;
+  /* Use 100vh minus header to strictly lock it to one screen */
+  height: calc(100vh - var(--header-height, 80px));
+  min-height: 550px; 
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 120px 0;
+  background-color: var(--color-on-background);
 }
 
 .heroBackground {
@@ -19,125 +21,104 @@
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(28, 27, 27, 0.7);
-  backdrop-filter: blur(2px);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(28, 27, 27, 0.6) 100%
+  );
   z-index: 1;
 }
 
 .heroContent {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   width: 100%;
   max-width: var(--space-container-max);
-  padding: 0 var(--space-margin); 
+  padding: 0 var(--space-margin);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* Reduced overall vertical movement */
+  justify-content: center; 
 }
 
 .established {
   color: var(--color-tertiary-fixed);
-  font-family: var(--font-family-body);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.4em;
-  margin-bottom: var(--space-stack-sm);
+  /* REDUCED MARGIN */
+  margin-bottom: 8px; 
   display: block;
 }
 
 .title {
   color: var(--color-white);
-  margin-bottom: var(--space-stack-md);
-  max-width: 56rem;
+  font-size: clamp(5rem, 6vw, 5rem); 
+  line-height: 1.05;
+  margin-bottom: 12px; 
+  max-width: 60rem;
+  font-weight: 800;
 }
 
 .description {
-  color: var(--color-zinc-300);
-  max-width: 42rem;
-  margin-bottom: var(--space-stack-lg);
+  color: var(--color-secondary-fixed);
+  max-width: 45rem;
+  /* REDUCED MARGIN */
+  margin-bottom: 20px; 
+  font-size: 1.125rem;
+  line-height: 1.5;
 }
 
 .buttonGroup {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 .primaryButton {
   background-color: var(--color-primary-container);
   color: var(--color-white);
   padding: 16px 40px;
-  font-family: var(--font-family-body);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 14px;
-  border-radius: var(--radius-default);
-  transition: background-color 0.3s ease;
-  width: auto;
-}
-
-.primaryButton:hover {
-  background-color: var(--color-primary);
-}
-
-.secondaryButton {
-  background-color: transparent;
-  border: 1px solid var(--color-outline-variant);
-  color: var(--color-white);
-  padding: 16px 40px;
-  font-family: var(--font-family-body);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 14px;
   border-radius: var(--radius-default);
   transition: all 0.3s ease;
-  width: auto;
 }
 
-.secondaryButton:hover {
-  background-color: var(--color-white);
-  color: var(--color-on-background);
+.primaryButton:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-white);
+  padding: 16px 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  border-radius: var(--radius-default);
+  transition: all 0.3s ease;
+}
+
+@media (max-height: 700px) {
+  .title { font-size: 3rem; }
+  .description { font-size: 1rem; margin-bottom: 16px; }
+  .established { margin-bottom: 4px; }
 }
 
 @media (max-width: 768px) {
   .heroSection {
-    min-height: 600px;
-    padding: 80px 0;
-  }
-
-  .heroContent {
-    padding: 0 var(--space-gutter);
-  }
-
-  .title {
-    margin-bottom: var(--space-stack-sm);
-  }
-}
-
-@media (max-width: 480px) {
-  .heroSection {
+    height: auto;
     min-height: 100vh;
-    padding: 64px 0;
-  }
-
-  .heroContent {
-    padding: 0 16px; 
-  }
-
-  .buttonGroup {
-    flex-direction: column;
-    width: 100%;
-    max-width: 320px;
-    gap: 16px;
-  }
-
-  .primaryButton,
-  .secondaryButton {
-    width: 100%;
+    padding: 80px 20px;
   }
 }

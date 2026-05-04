@@ -1,32 +1,36 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import styles from './CategoryFilter.module.css';
 
-interface Category {
-  name: string;
-  active: boolean;
-}
-
-const categories: Category[] = [
-  { name: 'All Collections', active: true },
-  { name: 'Premium Bricks', active: false },
-  { name: 'Architectural Tiles', active: false },
-  { name: 'Custom Designs', active: false },
-  { name: 'Geometric Patterns', active: false },
-  { name: 'Heritage Restorations', active: false },
+// We moved the list inside or imported it, but we manage the "active" state locally
+const categories = [
+  'All Collections',
+  'Premium Bricks',
+  'Architectural Tiles',
+  'Custom Designs',
+  'Geometric Patterns',
+  'Heritage Restorations',
 ];
 
 export const CategoryFilter: React.FC = () => {
+  // Track the name of the active category
+  const [activeCategory, setActiveCategory] = useState('All Collections');
+
   return (
     <section className={styles.filterSection}>
       <div className={styles.container}>
         <div className={styles.scrollContainer}>
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <button 
-              key={index} 
+              key={category} 
               type="button"
-              className={`${styles.filterButton} ${category.active ? styles.active : ''} font-label-caps`}
+              className={`${styles.filterButton} ${
+                activeCategory === category ? styles.active : ''
+              } font-label-caps`}
+              onClick={() => setActiveCategory(category)}
             >
-              {category.name}
+              {category}
             </button>
           ))}
         </div>
