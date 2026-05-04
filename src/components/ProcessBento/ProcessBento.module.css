@@ -4,18 +4,14 @@
   margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-  .bentoSection {
-    padding: var(--space-stack-lg) 64px;
-  }
-}
-
 .header {
   text-align: center;
   margin-bottom: 64px;
 }
 
 .tagline {
+  font-size: 22px;
+  font-style: italic;
   color: var(--color-primary);
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -23,7 +19,8 @@
 }
 
 .title {
-  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 60px;
 }
 
 .bentoGrid {
@@ -33,24 +30,10 @@
   height: auto;
 }
 
-@media (min-width: 768px) {
-  .bentoGrid {
-    grid-template-columns: repeat(12, 1fr);
-    height: 700px;
-  }
-}
-
 .mainFeature {
   position: relative;
   background-color: var(--color-surface-container);
   overflow: hidden;
-  /* equivalent to md:col-span-8 */
-}
-
-@media (min-width: 768px) {
-  .mainFeature {
-    grid-column: span 8 / span 8;
-  }
 }
 
 .image {
@@ -79,10 +62,12 @@
 }
 
 .featureTitle {
+  font-size: 20px;
   margin-bottom: 8px;
 }
 
 .featureDesc {
+  font-size: 14px;
   max-width: 28rem;
   opacity: 0.9;
 }
@@ -91,13 +76,6 @@
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   gap: 32px;
-  /* equivalent to md:col-span-4 */
-}
-
-@media (min-width: 768px) {
-  .sideFeatures {
-    grid-column: span 4 / span 4;
-  }
 }
 
 .topFeature {
@@ -114,18 +92,19 @@
 }
 
 .sideTitle {
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
   text-transform: uppercase;
-  font-size: 18px; /* body-lg size */
 }
 
 .sideDesc {
+  font-size: 14px;
   opacity: 0.8;
 }
 
 .bottomFeature {
-  background-color: #e7e5e4; /* stone-200 */
+  background-color: #e7e5e4;
   color: var(--color-on-surface);
   padding: 48px;
   display: flex;
@@ -139,12 +118,110 @@
 }
 
 .sideTitleDark {
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
   text-transform: uppercase;
-  font-size: 18px; /* body-lg size */
 }
 
 .sideDescDark {
+  font-size: 14px;
   color: var(--color-on-surface-variant);
+}
+
+/* Mobile Landscape (480px - 767px) */
+@media (min-width: 480px) {
+  .bentoSection {
+    padding: var(--space-stack-lg) 48px;
+  }
+  
+  .featureContent {
+    bottom: 32px;
+    left: 32px;
+  }
+  
+  .topFeature,
+  .bottomFeature {
+    padding: 32px;
+  }
+  
+  .featureTitle {
+    font-size: 24px;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) {
+  .bentoSection {
+    padding: var(--space-stack-lg) 64px;
+  }
+
+  .sideFeatures {
+    grid-column: span 4 / span 4;
+  }
+
+  .mainFeature {
+    grid-column: span 8 / span 8;
+  }
+
+  .bentoGrid {
+    grid-template-columns: repeat(12, 1fr);
+    height: 600px;
+  }
+  
+  .featureContent {
+    bottom: 40px;
+    left: 40px;
+  }
+  
+  .topFeature,
+  .bottomFeature {
+    padding: 40px;
+  }
+}
+
+/* Desktop (1024px - 1279px) */
+@media (min-width: 1024px) {
+  .bentoSection {
+    padding: var(--space-stack-lg) 80px;
+  }
+  
+   
+  .featureContent {
+    bottom: 48px;
+    left: 48px;
+  }
+  
+  .topFeature,
+  .bottomFeature {
+    padding: 48px; 
+  }
+  
+  .featureTitle {
+    font-size: 28px;
+  }
+  
+  .sideTitle,
+  .sideTitleDark {
+    font-size: 20px;
+  }
+}
+
+/* Large Desktop (1280px and above) */
+@media (min-width: 1280px) {
+  .bentoSection {
+    padding: var(--space-stack-lg) 0;
+  }
+  
+  .bentoGrid {
+    height: 500px;
+  }
+  
+  .featureTitle {
+    font-size: 32px;
+  }
+  
+  .featureDesc {
+    font-size: 16px;
+  }
 }

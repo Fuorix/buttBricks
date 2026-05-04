@@ -17,12 +17,6 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 .statItem {
   display: flex;
   flex-direction: column;
@@ -38,4 +32,40 @@
   opacity: 0.6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px)  {
+  .grid {
+    gap: 32px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .value {
+    font-size: 64px;
+  }
+  .container {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1024px)  {
+  .grid {
+    gap: 28px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .container {
+    padding: 0 28px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 34px;
+  }
+  .grid {
+    gap: 44px;
+   grid-template-columns: repeat(4, 1fr);
+  }
+  .value {
+    font-size: 80px;
+  }
 }

@@ -4,23 +4,11 @@
   margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-  .valuesSection {
-    padding: var(--space-stack-lg) 64px;
-  }
-}
-
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 48px;
   text-align: center;
-}
-
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .valueItem {
@@ -43,4 +31,30 @@
 
 .description {
   color: var(--color-on-surface-variant);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .valuesSection {
+    padding: var(--space-stack-lg) 64px;
+  }
+   .title {
+    font-size: 20px;
+  }
+  
+  .description {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 22px;
+  }
+  
+  .icon {
+    font-size: 56px;
+  }
 }
