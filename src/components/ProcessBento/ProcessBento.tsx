@@ -5,8 +5,8 @@ export const ProcessBento = () => {
   return (
     <section className={styles.bentoSection}>
       <div className={styles.header}>
-        <span className={`${styles.tagline} font-label-caps`}>The Methodology</span>
-        <h2 className={`${styles.title} font-headline-lg`}>Ancestral Craft meets Industrial Performance</h2>
+        <span className={`${styles.title} font-label-caps`}>The Methodology</span>
+        <h2 className={`${styles.tagline} font-headline-lg`}>Ancestral Craft meets Industrial Performance</h2>
       </div>
       
       <div className={styles.bentoGrid}>

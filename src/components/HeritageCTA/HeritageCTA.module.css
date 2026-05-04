@@ -29,14 +29,9 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
-  .contentContainer {
-    padding: 0 64px;
-  }
-}
 
 .title {
-  font-size: 72px; /* display-xl size */
+  font-size: 60px; /* display-xl size */
   margin-bottom: 48px;
 }
 
@@ -54,4 +49,64 @@
 
 .button:hover {
   background-color: #f5f5f4; /* stone-100 */
+}
+
+@media (min-width: 576px) {
+  .ctaSection {
+    padding: 80px 0;
+  }
+  .title {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+  .button {
+    padding: 20px 48px;
+  }
+  .contentContainer {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ctaSection {
+    padding: 96px 0;
+  }
+  .title {
+    font-size: 60px;
+    margin-bottom: 48px;
+  }
+  .button {
+    padding: 22px 56px;
+  }
+  .contentContainer {
+    padding: 0 64px;
+  }
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ctaSection {
+    padding: 112px 0;
+  }
+  .title {
+    font-size: 72px;
+  }
+  .button {
+    padding: 24px 64px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ctaSection {
+    padding: 128px 0;
+  }
+  .title {
+    font-size: 72px;
+  }
+  .gridLine {
+    border-right: 1px solid #ffffff;
+  }
 }

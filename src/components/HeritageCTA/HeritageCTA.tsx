@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './HeritageCTA.module.css';
+import Link from 'next/link';
 
 export const HeritageCTA = () => {
   return (
@@ -13,9 +14,11 @@ export const HeritageCTA = () => {
       </div>
       <div className={styles.contentContainer}>
         <h2 className={`${styles.title} font-headline-lg`}>Build For Eternity.</h2>
-        <button className={`${styles.button} font-headline-md`}>
-          JOIN OUR LEGACY
-        </button>
+        <Link href="/contact">
+          <button className={`${styles.button} font-headline-md`}>
+            JOIN OUR LEGACY
+          </button>
+        </Link>
       </div>
     </section>
   );

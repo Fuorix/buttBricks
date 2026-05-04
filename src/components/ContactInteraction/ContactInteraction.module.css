@@ -163,10 +163,11 @@
   padding: 40px;
 }
 
+/* FIX: Use auto for first col and 1fr for the email col to give it more room */
 .hoursGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
 }
 
 .smallTitle {
@@ -174,9 +175,16 @@
   margin-bottom: 12px;
 }
 
+/* FIX: Removed break-all and added nowrap to prevent the email snap */
 .text {
   color: var(--color-on-surface);
-  word-break: break-all;
+  white-space: nowrap;
+}
+
+/* Email list container for extra safety */
+.emailList {
+  display: flex;
+  flex-direction: column;
 }
 
 .hqCard {
@@ -234,6 +242,12 @@
   .formRow {
     gap: 24px;
   }
+  
+  /* Allow email text to wrap naturally on tablet if space is tight */
+  .text {
+    white-space: normal;
+    word-break: normal;
+  }
 }
 
 @media (max-width: 480px) {
@@ -249,6 +263,7 @@
     grid-template-columns: 1fr;
   }
 
+  /* Stack vertically on mobile to give email 100% width */
   .hoursGrid {
     grid-template-columns: 1fr;
     gap: 24px;
