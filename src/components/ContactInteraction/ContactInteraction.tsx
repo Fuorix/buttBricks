@@ -8,6 +8,7 @@ export const ContactInteraction: React.FC = () => {
     <section className={styles.interactionSection}>
       <div className={styles.container}>
         <div className={styles.grid}>
+          {/* Left Column: Form */}
           <div className={styles.formColumn}>
             <h2 className={`${styles.formTitle} font-headline-md`}>Technical Inquiry Form</h2>
             <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
@@ -40,6 +41,7 @@ export const ContactInteraction: React.FC = () => {
             </form>
           </div>
           
+          {/* Right Column: Information Cards */}
           <div className={styles.infoColumn}>
             <div className={styles.whatsappCard}>
               <div className={styles.cardHeader}>
@@ -66,15 +68,17 @@ export const ContactInteraction: React.FC = () => {
             
             <div className={styles.hoursCard}>
               <div className={styles.hoursGrid}>
-                <div>
+                <div className={styles.hoursInfo}>
                   <h4 className={`${styles.smallTitle} font-label-caps`}>Office Hours</h4>
                   <p className={`${styles.text} font-body-md`}>Mon — Sat</p>
                   <p className={`${styles.text} font-body-md`}>09:00 — 18:00 (PST)</p>
                 </div>
-                <div>
+                <div className={styles.emailInfo}>
                   <h4 className={`${styles.smallTitle} font-label-caps`}>Official Email</h4>
-                  <p className={`${styles.text} font-body-md`}>consul@buttbricks.pk</p>
-                  <p className={`${styles.text} font-body-md`}>support@buttbricks.pk</p>
+                  <div className={styles.emailList}>
+                    <p className={`${styles.text} font-body-md`}>consul@buttbricks.pk</p>
+                    <p className={`${styles.text} font-body-md`}>support@buttbricks.pk</p>
+                  </div>
                 </div>
               </div>
             </div>
