@@ -1,6 +1,8 @@
 .filterSection {
-  margin-top: var(--space-stack-md);
-  padding: var(--space-stack-md) 0;
+  /* Reduced margins to fix the large gap */
+  margin-top: 0; 
+  padding: 24px 0;
+  background-color: var(--color-background);
 }
 
 .container {
@@ -12,8 +14,8 @@
 .scrollContainer {
   display: flex;
   overflow-x: auto;
-  padding-bottom: 16px;
-  gap: 16px;
+  padding-bottom: 8px; /* Reduced padding */
+  gap: 12px; /* Tighter gap */
   -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -25,62 +27,37 @@
 
 .filterButton {
   flex: none;
-  background-color: var(--color-surface-container);
-  color: var(--color-on-surface-variant);
-  padding: 12px 32px;
+  background-color: var(--color-surface-container-high);
+  color: var(--color-secondary);
+  padding: 12px 28px;
   white-space: nowrap;
-  transition: all 0.3s ease;
-  border-radius: 0;
+  transition: all 0.2s ease-in-out;
+  border-radius: var(--radius-default);
   border: none;
   cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
 .filterButton:hover {
   background-color: var(--color-surface-container-highest);
+  color: var(--color-on-surface);
 }
 
 .filterButton.active {
   background-color: var(--color-primary);
-  color: var(--color-on-primary);
+  color: var(--color-white);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
+/* Ensure active stays active even on hover */
 .filterButton.active:hover {
   background-color: var(--color-primary);
-  color: var(--color-on-primary);
-}
-
-@media (max-width: 1024px) {
-  .scrollContainer {
-    flex-wrap: wrap;
-    overflow-x: visible;
-    padding-bottom: 0;
-  }
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--space-gutter);
-  }
-
-  .scrollContainer {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
-
-  .scrollContainer {
-    margin: 0 -16px;
-    padding: 0 16px 16px 16px;
-    gap: 12px;
-  }
-
-  .filterButton {
-    padding: 10px 24px;
   }
 }
