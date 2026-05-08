@@ -29,13 +29,11 @@
   transition: filter 0.6s ease, transform 0.6s ease;
 }
 
-/* Hover effect */
 .mapWrapper:hover .mapFrame {
   filter: none;
   transform: scale(1.03);
 }
 
-/* Overlay (lighter, not black) */
 .mapOverlay {
   position: absolute;
   inset: 0;
@@ -143,7 +141,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--space-gutter);

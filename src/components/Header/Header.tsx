@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 
@@ -11,40 +12,72 @@ export const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
 
-  // Scroll logic to hide/show header
-  useEffect(() => {
-    const controlNavbar = () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 100) { 
-        setIsVisible(false); // Scrolling down
+  const controlNavbar = useCallback(() => {
+    if (typeof window !== 'undefined') {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        setIsVisible(false);
       } else {
-        setIsVisible(true); // Scrolling up
+        setIsVisible(true);
       }
       setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', controlNavbar);
-    return () => window.removeEventListener('scroll', controlNavbar);
+    }
   }, [lastScrollY]);
 
+  useEffect(() => {
+    window.addEventListener('scroll', controlNavbar);
+    return () => window.removeEventListener('scroll', controlNavbar);
+  }, [controlNavbar]);
+
+  // Prevent background scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Products', href: '/products' },
-    { name: 'About Us', href: '/heritage' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'HOME', href: '/' },
+    { name: 'PRODUCTS', href: '/products' },
+    { name: 'ABOUT US', href: '/heritage' },
+    { name: 'PROJECTS', href: '/projects' },
+    { name: 'CONTACT', href: '/contact' },
   ];
 
   return (
     <header className={`${styles.header} ${isVisible ? styles.visible : styles.hidden}`}>
       <nav className={styles.nav}>
-        <Link href="/" className={styles.logoContainer}>
-          <span className={`material-symbols-outlined ${styles.logoIcon}`}>grid_view</span>
-          <span className={styles.logoText}>BUTT BRICKS</span>
-        </Link>
+        {/* Left Section: Logo */}
+        <div className={styles.navLeft}>
+          <Link href="/" className={styles.logoContainer} onClick={() => setIsMobileMenuOpen(false)}>
+            <Image 
+              src="/favicon.png" 
+              alt="Butt Bricks Logo" 
+              width={32} 
+              height={32} 
+              className={styles.logoImage}
+              priority
+            />
+            <span className={styles.logoText}>BUTT BRICKS</span>
+          </Link>
+        </div>
 
+        {/* Center Section: Navigation Links */}
+        <div 
+          className={`${styles.backdrop} ${isMobileMenuOpen ? styles.backdropVisible : ''}`} 
+          onClick={() => setIsMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+        
         <ul className={`${styles.navLinks} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className={styles.navItem}>
               <Link 
                 href={link.href} 
                 className={`${styles.navLink} ${pathname === link.href ? styles.active : ''}`}
@@ -54,24 +87,32 @@ export const Header = () => {
               </Link>
             </li>
           ))}
+          <li className={styles.mobileOnlyCta}>
+            <Link href="/quote" className={styles.ctaButton} onClick={() => setIsMobileMenuOpen(false)}>
+               <span className="material-symbols-outlined">construction</span>
+               <span>GET A QUOTE</span>
+            </Link>
+          </li>
         </ul>
 
-        <div className={styles.actions}>
-          <Link href="/quote" className={styles.ctaButton}>
-            {/* Updated Icon */}
-            <span className="material-symbols-outlined">construction</span>
-            <span className={styles.ctaText}>GET A QUOTE</span>
-          </Link>
-          
-          <button 
-            className={styles.menuToggle} 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className="material-symbols-outlined">
-              {isMobileMenuOpen ? 'close' : 'menu'}
-            </span>
-          </button>
+        <div className={styles.navRight}>
+          <div className={styles.actions}>
+            <Link href="/contact" className={`${styles.ctaButton} ${styles.desktopCta}`}>
+              <span className="material-symbols-outlined">construction</span>
+              <span className={styles.ctaText}>GET A QUOTE</span>
+            </Link>
+            
+            <button 
+              className={styles.menuToggle} 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              <span className="material-symbols-outlined">
+                {isMobileMenuOpen ? 'close' : 'menu'}
+              </span>
+            </button>
+          </div>
         </div>
       </nav>
     </header>

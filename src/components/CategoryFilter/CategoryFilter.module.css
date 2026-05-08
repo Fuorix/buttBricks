@@ -1,5 +1,4 @@
 .filterSection {
-  /* Reduced margins to fix the large gap */
   margin-top: 0; 
   padding: 24px 0;
   background-color: var(--color-background);
@@ -11,18 +10,11 @@
   padding: 0 var(--space-margin);
 }
 
-.scrollContainer {
+.filterGroup {
   display: flex;
-  overflow-x: auto;
-  padding-bottom: 8px; /* Reduced padding */
-  gap: 12px; /* Tighter gap */
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  scroll-behavior: smooth;
-}
-
-.scrollContainer::-webkit-scrollbar {
-  display: none;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 8px;
 }
 
 .filterButton {
@@ -50,7 +42,6 @@
   box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
-/* Ensure active stays active even on hover */
 .filterButton.active:hover {
   background-color: var(--color-primary);
   opacity: 0.9;

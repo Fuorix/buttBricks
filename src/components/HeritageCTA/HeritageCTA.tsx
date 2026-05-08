@@ -5,17 +5,11 @@ import Link from 'next/link';
 export const HeritageCTA = () => {
   return (
     <section className={styles.ctaSection}>
-      <div className={styles.patternOverlay}>
-        <div className={styles.gridContainer}>
-          <div className={styles.gridLine}></div><div className={styles.gridLine}></div><div className={styles.gridLine}></div><div className={styles.gridLine}></div>
-          <div className={styles.gridLine}></div><div className={styles.gridLine}></div><div className={styles.gridLine}></div><div className={styles.gridLine}></div>
-          <div className={styles.gridLine}></div><div className={styles.gridLine}></div><div className={styles.gridLine}></div><div></div>
-        </div>
-      </div>
+      <div className={`${styles.patternOverlay} brick-grid-pattern`}></div>
       <div className={styles.contentContainer}>
-        <h2 className={`${styles.title} font-headline-lg`}>Build For Eternity.</h2>
-        <Link href="/contact">
-          <button className={`${styles.button} font-headline-md`}>
+        <h2 className={`${styles.title} font-display-xl`}>Build For Eternity.</h2>
+        <Link href="/contact" className={styles.buttonLink}>
+          <button className={`${styles.button} font-label-caps`}>
             JOIN OUR LEGACY
           </button>
         </Link>

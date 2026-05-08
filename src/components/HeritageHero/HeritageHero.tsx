@@ -1,9 +1,25 @@
-import React from 'react';
+"use client";
+
+import React, { useRef } from 'react';
 import styles from './HeritageHero.module.css';
 
-export const HeritageHero = () => {
+export const HeritageHero: React.FC = () => {
+  const heroRef = useRef<HTMLElement>(null);
+
+  const scrollToNextSection = () => {
+    if (heroRef.current && heroRef.current.nextElementSibling) {
+      const nextSection = heroRef.current.nextElementSibling as HTMLElement;
+      const targetPosition = nextSection.getBoundingClientRect().top + window.scrollY ;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section className={styles.heroSection}>
+    <section ref={heroRef} className={styles.heroSection}>
       <div className={styles.overlay}></div>
       <img 
         className={styles.image} 
@@ -18,9 +34,14 @@ export const HeritageHero = () => {
           <span className={styles.italicText}>Built for the Future.</span>
         </h1>
       </div>
-      <div className={styles.scrollIndicator}>
-        <span className="material-symbols-outlined" data-icon="south">south</span>
-      </div>
+      <button 
+        type="button"
+        className={styles.scrollIndicator} 
+        onClick={scrollToNextSection}
+        aria-label="Scroll to next section"
+      >
+        <span className="material-symbols-outlined" aria-hidden="true">south</span>
+      </button>
     </section>
   );
 };

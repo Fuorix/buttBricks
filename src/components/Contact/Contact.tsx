@@ -17,7 +17,11 @@ export const Contact: React.FC = () => {
               <span className={`material-symbols-outlined ${styles.icon}`}>location_on</span>
               <div>
                 <h5 className={`${styles.infoTitle} font-label-caps`}>Corporate Address</h5>
-                <p className={styles.infoText}>Harbans Pura, Canal Bank Road, Lahore, Pakistan</p>
+                <p className={styles.infoText}>
+                  Defence Road, Canal Bridge,<br />
+                  Harbans Pura, Lahore, Punjab,<br />
+                  Pakistan. (54000)
+                </p>
               </div>
             </div>
             
@@ -25,7 +29,11 @@ export const Contact: React.FC = () => {
               <span className={`material-symbols-outlined ${styles.icon}`}>call</span>
               <div>
                 <h5 className={`${styles.infoTitle} font-label-caps`}>WhatsApp & Phone</h5>
-                <p className={styles.infoText}>+92 (0) 300 1234567<br/>+92 (0) 321 7654321</p>
+                <p className={styles.infoText}>
+                  +92 321 9485444<br />
+                  +92 321 2222957<br />
+                  +92 321 4001318
+                </p>
               </div>
             </div>
             
@@ -48,7 +56,7 @@ export const Contact: React.FC = () => {
             
             <div className={styles.formGroup}>
               <label className={`${styles.label} font-label-caps`}>Phone Number</label>
-              <input className={styles.input} type="tel" placeholder="+92 XXX XXXXXXX" />
+              <input className={styles.input} type="tel" placeholder="+92 3XX XXXXXXX" />
             </div>
             
             <div className={styles.formGroup}>

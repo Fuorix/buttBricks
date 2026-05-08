@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './Products.module.css';
 import { productData } from '@/data/productsData'; 
 
@@ -16,11 +17,12 @@ export const Products: React.FC = () => {
           {productData.map((product, index) => (
             <div key={index} className={styles.card}>
               <div className={styles.imageWrapper}>
-                <img 
+                <Image 
                   className={styles.image} 
                   src={product.image} 
                   alt={product.alt} 
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 {product.tag && (
                   <div className={styles.cardBadge}>{product.tag}</div>

@@ -1,13 +1,13 @@
 .heroSection {
   position: relative;
-  /* Use 100vh minus header to strictly lock it to one screen */
-  height: calc(100vh - var(--header-height, 80px));
+  height: calc(100vh - 80px);
   min-height: 550px; 
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: var(--color-on-background);
+  background-color: var(--color-zinc-900);
+  box-sizing: border-box;
 }
 
 .heroBackground {
@@ -23,8 +23,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(28, 27, 27, 0.6) 100%
+    color-mix(in srgb, var(--color-black) 80%, transparent) 0%,
+    color-mix(in srgb, var(--color-zinc-900) 60%, transparent) 100%
   );
   z-index: 1;
 }
@@ -39,37 +39,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Reduced overall vertical movement */
   justify-content: center; 
+  gap: var(--space-stack-md);
 }
 
 .established {
   color: var(--color-tertiary-fixed);
+  font-family: var(--font-family-body);
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.4em;
-  /* REDUCED MARGIN */
-  margin-bottom: 8px; 
+  margin: 0;
   display: block;
 }
 
 .title {
   color: var(--color-white);
-  font-size: clamp(5rem, 6vw, 5rem); 
-  line-height: 1.05;
-  margin-bottom: 12px; 
+  font-size: clamp(2.5rem, 6vw, 5rem); 
+  line-height: 1.1;
+  margin: 0;
   max-width: 60rem;
   font-weight: 800;
 }
 
 .description {
   color: var(--color-secondary-fixed);
+  font-family: var(--font-family-body);
   max-width: 45rem;
-  /* REDUCED MARGIN */
-  margin-bottom: 20px; 
+  margin: 0;
   font-size: 1.125rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .buttonGroup {
@@ -77,48 +77,93 @@
   flex-direction: row;
   justify-content: center;
   gap: 16px;
+  margin-top: 8px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  border-radius: var(--radius-default);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .primaryButton {
   background-color: var(--color-primary-container);
   color: var(--color-white);
-  padding: 16px 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 14px;
-  border-radius: var(--radius-default);
-  transition: all 0.3s ease;
+  border: 2px solid var(--color-primary-container);
 }
 
 .primaryButton:hover {
   background-color: var(--color-primary);
+  border-color: var(--color-primary);
   transform: translateY(-2px);
 }
 
 .secondaryButton {
   background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid color-mix(in srgb, var(--color-white) 40%, transparent);
   color: var(--color-white);
-  padding: 16px 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 14px;
-  border-radius: var(--radius-default);
-  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background-color: var(--color-white);
+  color: var(--color-zinc-900);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
 }
 
 @media (max-height: 700px) {
+  .heroSection {
+    min-height: 480px;
+  }
   .title { font-size: 3rem; }
-  .description { font-size: 1rem; margin-bottom: 16px; }
-  .established { margin-bottom: 4px; }
+  .description { font-size: 1rem; }
+  .heroContent { gap: var(--space-stack-sm); }
+}
+
+@media (max-width: 1024px) {
+  .heroContent {
+    padding: 0 var(--space-gutter);
+  }
+  .description {
+    max-width: 35rem;
+  }
 }
 
 @media (max-width: 768px) {
   .heroSection {
     height: auto;
-    min-height: 100vh;
-    padding: 80px 20px;
+    min-height: calc(100vh - 70px);
+    padding: var(--space-stack-lg) var(--space-gutter);
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .buttonGroup {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    padding: 16px 24px;
   }
 }

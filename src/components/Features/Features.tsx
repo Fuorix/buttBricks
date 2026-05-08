@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Features.module.css';
-import { featuresData } from '@/data/featuresData'; // Linked here
+import { featuresData } from '@/data/featuresData'; 
 
 export const Features: React.FC = () => {
   return (

@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background-color: #25D366; /* WhatsApp Green remains fixed as it is brand-specific */
+  background-color: var(--color-primary);
   color: var(--color-white);
   padding: 16px 32px;
   box-shadow: 0 20px 25px -5px color-mix(in srgb, var(--color-on-background) 10%, transparent), 
@@ -22,7 +22,7 @@
 
 .ctaButton:hover {
   transform: translateY(-4px) scale(1.02);
-  background-color: #1ebe5d;
+  background-color: color-mix(in srgb, var(--color-primary) 90%, transparent);
 }
 
 .ctaText {
@@ -51,7 +51,7 @@
   .floatingContainer {
     bottom: 16px;
     right: 16px;
-    left: 16px; /* On mobile, full-width floating CTAs are often more accessible */
+    left: 16px; 
   }
 
   .ctaButton {

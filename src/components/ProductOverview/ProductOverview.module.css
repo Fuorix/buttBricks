@@ -1,6 +1,6 @@
 .overviewSection {
-  margin-top: var(--space-stack-lg);
   padding-top: var(--space-stack-lg);
+  padding-bottom: var(--space-stack-lg);
   border-top: 1px solid var(--color-outline-variant);
   width: 100%;
 }
@@ -21,8 +21,11 @@
   grid-column: span 4;
 }
 
+/* Keeps the title visible while scrolling through long narratives */
 .title {
   color: var(--color-on-background);
+  position: sticky;
+  top: calc(80px + var(--space-stack-md));
 }
 
 .contentColumn {
@@ -34,12 +37,12 @@
 
 .leadText {
   color: var(--color-on-surface);
-  line-height: 1.625;
+  line-height: 1.7;
 }
 
 .bodyText {
   color: var(--color-secondary);
-  line-height: 1.625;
+  line-height: 1.7;
 }
 
 @media (max-width: 1024px) {
@@ -51,6 +54,11 @@
   .titleColumn,
   .contentColumn {
     grid-column: span 1;
+  }
+
+  /* No sticky on mobile — it would block content */
+  .title {
+    position: static;
   }
 }
 
@@ -64,7 +72,7 @@
   .container {
     padding: 0 16px;
   }
-  
+
   .contentColumn {
     gap: 16px;
   }

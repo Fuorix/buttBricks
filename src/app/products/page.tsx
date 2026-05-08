@@ -8,7 +8,7 @@ export default function ProductsCatalog() {
     <>
       <main className="max-w-[var(--space-container-max)] mx-auto px-8 lg:px-[var(--space-margin)]">
         <CatalogHeader />
-        <CategoryFilter />
+        {/* <CategoryFilter /> */}
         <CatalogGrid />
         <CustomShapeCTA />
       </main>

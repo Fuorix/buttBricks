@@ -6,8 +6,8 @@ export const StatsBar: React.FC = () => {
     <section className={styles.statsSection}>
       <div className={styles.statsContainer}>
         <div className={styles.statItem}>
-          <p className={`${styles.statValue} font-headline-lg`}>1979</p>
-          <p className={`${styles.statLabel} font-label-caps`}>Year Established</p>
+          <p className={`${styles.statValue} font-headline-lg`}>40+</p>
+          <p className={`${styles.statLabel} font-label-caps`}>Years of Excellence</p>
         </div>
         
         <div className={styles.statItem}>
