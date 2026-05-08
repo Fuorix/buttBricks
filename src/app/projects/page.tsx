@@ -9,7 +9,7 @@ export default function Projects() {
     <>
       <main>
         <ProjectsHeader />
-        <ProjectsFilter />
+        {/* <ProjectsFilter /> */}
         <ProjectsGrid />
         <ProjectsStats />
         <ProjectsCTA />

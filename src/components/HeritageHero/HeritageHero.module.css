@@ -1,14 +1,20 @@
 .heroSection {
   position: relative;
-  height: 707px;
+  height: calc(100vh - 80px); 
+  min-height: 500px;
   width: 100%;
   overflow: hidden;
+  background-color: var(--color-zinc-900);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(28, 25, 23, 0.4);
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-zinc-900) 40%, transparent) 0%,
+    color-mix(in srgb, var(--color-zinc-900) 70%, transparent) 100%
+  );
   z-index: 10;
 }
 
@@ -19,6 +25,7 @@
   height: 100%;
   object-fit: cover;
   filter: grayscale(20%);
+  z-index: 0;
 }
 
 .contentContainer {
@@ -30,24 +37,28 @@
   justify-content: center;
   max-width: var(--space-container-max);
   margin: 0 auto;
-  padding: 0 32px;
-  color: #ffffff;
+  padding: 0 var(--space-margin);
 }
 
 .tagline {
+  color: var(--color-tertiary-fixed);
   text-transform: uppercase;
   letter-spacing: 0.3em;
   margin-bottom: 24px;
   display: block;
+  font-weight: 600;
 }
 
 .title {
   max-width: 56rem;
   line-height: 1.1;
+  margin: 0;
+  color: var(--color-white);
 }
 
 .italicText {
   font-style: italic;
+  color: var(--color-secondary-fixed);
 }
 
 .scrollIndicator {
@@ -56,62 +67,66 @@
   right: 0;
   width: 128px;
   height: 128px;
-  background-color: var(--color-primary-container);
+  background-color: var(--color-primary);
   z-index: 20;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.scrollIndicator:hover {
+  background-color: var(--color-primary-container);
 }
 
 .scrollIndicator span {
-  color: #ffffff;
+  color: var(--color-white);
   font-size: 36px;
+  animation: bounce 2.5s infinite cubic-bezier(0.28, 0.84, 0.42, 1);
 }
 
-@media (max-width: 767px) {
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-height: 700px) {
+  .scrollIndicator {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .scrollIndicator {
+    width: 96px;
+    height: 96px;
+  }
+  .scrollIndicator span {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
   .heroSection {
-    height: 500px;
+    height: 80vh;
   }
   
-  .title {
-    font-size: 32px;
+  .contentContainer {
+    padding: 0 var(--space-gutter);
   }
   
   .scrollIndicator {
     display: none;
-  }
-}
-
-/* Tablet (768px to 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .heroSection {
-    height: 650px;
-  }
-  
-  .scrollIndicator {
-    display: flex;
-    width: 112px;
-    height: 112px;
-  }
-  
-  .title {
-    font-size: 52px;
-  }
-}
-
-/* Desktop (1024px and above) */
-@media (min-width: 1024px) {
-  .heroSection {
-    height: 707px;
-  }
-  
-  .scrollIndicator {
-    display: flex;
-    width: 128px;
-    height: 128px;
-  }
-  
-  .title {
-    font-size: 64px;
   }
 }

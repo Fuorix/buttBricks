@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from './CustomShapeCTA.module.css';
 
 export const CustomShapeCTA: React.FC = () => {
@@ -12,9 +13,9 @@ export const CustomShapeCTA: React.FC = () => {
         <p className={`${styles.description} font-body-lg`}>
           Our kiln masters and design engineers specialize in bespoke shapes and custom material densities for mega-scale architectural projects.
         </p>
-        <button type="button" className={styles.button}>
+        <Link href="/contact" className={styles.button}>
           Request a custom shape
-        </button>
+        </Link>
       </div>
     </section>
   );

@@ -8,7 +8,6 @@ export const ContactMap = () => {
 
   const resetMap = () => {
     if (mapRef.current) {
-      // reload iframe → resets map position
       mapRef.current.src = mapRef.current.src;
     }
   };
@@ -18,17 +17,16 @@ export const ContactMap = () => {
       <div className={styles.container}>
         <div className={styles.mapWrapper}>
           
-          {/* MAP */}
           <iframe
             ref={mapRef}
             className={styles.mapFrame}
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13596.294551854031!2d74.41738088559545!3d31.57702846773293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919101fe628dc2f%3A0x20b9ee546bfcb741!2sHarbanspura%2C%20Lahore%2C%20Pakistan!5e0!3m2!1sen!2s!4v1777907178729!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.238926838!2d74.475432!3d31.5497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDMyJzU4LjkiTiA3NMKwMjgnMzEuNiJF!5e0!3m2!1sen!2sus!4v1778238926838!5m2!1sen!2sus"
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
 
           <div className={styles.mapOverlay}></div>
 
-          {/* RESET PIN */}
           <div className={styles.pinContainer}>
             <button
               onClick={resetMap}

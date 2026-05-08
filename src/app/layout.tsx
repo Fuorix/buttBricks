@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   title: "Butt Bricks | Pakistan's Premier Brick Manufacturer",
   description:
     "Supplying architects, engineers and contractors with premium quality face bricks, floor designs and khaprail across Pakistan and the world since 1979.",
+  icons: {
+    icon: "/favicon.png", 
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

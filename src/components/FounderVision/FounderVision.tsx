@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './FounderVision.module.css';
 
-export const FounderVision = () => {
+export const FounderVision: React.FC = () => {
   return (
-    <section className={styles.founderSection}>
+    <section id="founder-vision" className={styles.founderSection}>
       <div className={styles.gridContainer}>
         <div className={styles.textColumn}>
           <span className={`${styles.tagline} font-label-caps`}>The Genesis</span>

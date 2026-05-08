@@ -1,51 +1,31 @@
 .gridSection {
   padding-bottom: var(--space-stack-lg);
+  background-color: var(--color-background);
 }
 
 .container {
   max-width: var(--space-container-max);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 var(--space-margin);
 }
 
 .masonryGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: var(--space-stack-lg);
 }
 
 .card {
   cursor: pointer;
-}
-
-.cardSide {
-  /* md:col-span-4 */
   display: flex;
   flex-direction: column;
-}
-
-.cardStandard {
-  /* md:col-span-6 */
-  margin-top: var(--space-stack-md);
 }
 
 .imageWrapper {
   position: relative;
   overflow: hidden;
   background-color: var(--color-surface-variant);
-}
-
-.aspect16_9 {
-  aspect-ratio: 16 / 9;
-}
-
-.aspect4_5 {
-  aspect-ratio: 4 / 5;
-  flex-grow: 1;
-}
-
-.aspectVideo {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
 }
 
 .image {
@@ -53,51 +33,38 @@
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%);
-  transition: all 0.7s ease;
-}
-
-.cardLarge .image {
-  transform: scale(1.05);
+  transition: transform 0.7s ease, filter 0.7s ease;
 }
 
 .card:hover .image {
   filter: grayscale(0%);
-}
-
-.cardLarge:hover .image {
-  transform: scale(1);
+  transform: scale(1.05);
 }
 
 .badgeWrapper {
   position: absolute;
-  top: 0;
-  left: 0;
-  padding: 32px;
+  top: var(--space-stack-sm);
+  left: var(--space-stack-sm);
+  z-index: 2;
 }
 
 .badge {
   background-color: var(--color-primary);
-  color: var(--color-surface);
+  color: var(--color-white);
   padding: 8px 16px;
 }
 
-.cardContentBordered {
-  margin-top: 24px;
+.cardContent {
+  margin-top: var(--space-stack-sm);
+  border-bottom: 1px solid var(--color-outline-variant);
+  padding-bottom: var(--space-stack-sm);
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  border-bottom: 1px solid rgba(28, 27, 27, 0.1);
-  padding-bottom: 24px;
-}
-
-.cardContentBorderedBottom {
-  margin-top: 24px;
-  border-bottom: 1px solid rgba(28, 27, 27, 0.1);
-  padding-bottom: 24px;
+  flex-direction: column;
+  gap: var(--space-unit);
 }
 
 .cardTitle {
-  margin-bottom: 8px;
+  color: var(--color-on-background);
 }
 
 .cardLocation {
@@ -106,26 +73,21 @@
   letter-spacing: 0.1em;
 }
 
-.arrowIcon {
-  font-size: 36px;
-  color: var(--color-primary);
-  margin-top: 8px;
+@media (min-width: 768px) {
+  .masonryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-gutter);
+  }
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding: 0 48px;
-  }
+@media (min-width: 1024px) {
   .masonryGrid {
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
-   .cardLarge {
-    grid-column: span 8 / span 8;
-  }
-  .cardSide {
-    grid-column: span 4 / span 4;
-  }
-  .cardStandard {
-    grid-column: span 6 / span 6;
+}
+
+@media (max-width: 1060px) {
+  .container {
+    padding: 0 var(--space-gutter);
   }
 }

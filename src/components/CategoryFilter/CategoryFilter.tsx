@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import styles from './CategoryFilter.module.css';
 
-// We moved the list inside or imported it, but we manage the "active" state locally
 const categories = [
   'All Collections',
   'Premium Bricks',
@@ -14,13 +13,12 @@ const categories = [
 ];
 
 export const CategoryFilter: React.FC = () => {
-  // Track the name of the active category
   const [activeCategory, setActiveCategory] = useState('All Collections');
 
   return (
     <section className={styles.filterSection}>
       <div className={styles.container}>
-        <div className={styles.scrollContainer}>
+        <div className={styles.filterGroup}>
           {categories.map((category) => (
             <button 
               key={category} 
