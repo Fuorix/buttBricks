@@ -13,7 +13,7 @@ export const FounderVision: React.FC = () => {
             In 1979, Muhammad Yaqoob Butt laid the first kiln in Lahore with a singular conviction: that a brick is not merely a building block, but the very DNA of architectural permanence.
           </p>
           <p className={`${styles.bodyText} font-body-md`}>
-            What began as a localized craft in the Jallo area quickly transformed under his leadership. His obsession with the chemical composition of clay and the precision of the firing process saw Butt Bricks evolve from a regional supplier to an international exporter, setting the benchmark for industrial masonry in Pakistan.
+            What began as a localized craft quickly transformed under his leadership. His obsession with the chemical composition of clay and the precision of the firing process saw Butt Bricks evolve from a regional supplier to an international exporter, setting the benchmark for industrial masonry in Pakistan.
           </p>
         </div>
         <div className={styles.imageColumn}>

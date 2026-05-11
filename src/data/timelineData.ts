@@ -14,8 +14,8 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '1995',
-    title: 'TRIPLE KILN SCALE',
-    description: 'Expansion to three high-capacity kilns in the Jallo area to meet industrial demand.',
+    title: 'DUAL KILN SCALE',
+    description: 'Expansion to two high-capacity kilns to meet industrial demand.',
     active: false
   },
   {

@@ -114,7 +114,7 @@ export const Contact: React.FC = () => {
                 <h5 className={`${styles.infoTitle} font-label-caps`}>WhatsApp & Phone</h5>
                 <p className={styles.infoText}>
                   +92 321 9485444<br />
-                  +92 321 2222957<br />
+                  +92 328 1222957<br />
                   +92 321 4001318
                 </p>
               </div>
@@ -123,7 +123,7 @@ export const Contact: React.FC = () => {
               <span className={`material-symbols-outlined ${styles.icon}`}>mail</span>
               <div>
                 <h5 className={`${styles.infoTitle} font-label-caps`}>Email Inquiry</h5>
-                <p className={styles.infoText}>info@buttbricks.com</p>
+                <p className={styles.infoText}>buttbricks@yahoo.com</p>
               </div>
             </div>
           </div>

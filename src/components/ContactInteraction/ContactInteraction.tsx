@@ -203,15 +203,15 @@ export const ContactInteraction: React.FC = () => {
               <div className={styles.contactList}>
                 <div className={styles.contactItem}>
                   <div>
-                    <p className={`${styles.contactRegion} font-body-md`}>South Asia Region</p>
-                    <p className={`${styles.contactNumber} font-headline-md`}>+92 42 3578 9011</p>
+                    <p className={`${styles.contactRegion} font-body-md`}>Primary Contact</p>
+                    <p className={`${styles.contactNumber} font-headline-md`}>+92 321 9485444</p>
                   </div>
                   <span className={`material-symbols-outlined ${styles.arrowIcon}`}>arrow_forward</span>
                 </div>
                 <div className={styles.contactItem}>
                   <div>
-                    <p className={`${styles.contactRegion} font-body-md`}>Middle East Hub</p>
-                    <p className={`${styles.contactNumber} font-headline-md`}>+971 4 234 5678</p>
+                    <p className={`${styles.contactRegion} font-body-md`}>Secondary Contact</p>
+                    <p className={`${styles.contactNumber} font-headline-md`}>+92 328 1222957</p>
                   </div>
                   <span className={`material-symbols-outlined ${styles.arrowIcon}`}>arrow_forward</span>
                 </div>
@@ -228,8 +228,7 @@ export const ContactInteraction: React.FC = () => {
                 <div className={styles.emailInfo}>
                   <h4 className={`${styles.smallTitle} font-label-caps`}>Official Email</h4>
                   <div className={styles.emailList}>
-                    <p className={`${styles.text} font-body-md`}>consul@buttbricks.pk</p>
-                    <p className={`${styles.text} font-body-md`}>support@buttbricks.pk</p>
+                    <p className={`${styles.text} font-body-md`}>buttbricks@yahoo.com</p>
                   </div>
                 </div>
               </div>
@@ -242,7 +241,7 @@ export const ContactInteraction: React.FC = () => {
                   <h3 className={`${styles.hqTitle} font-label-caps`}>Global Headquarters</h3>
                 </div>
                 <p className={`${styles.hqAddress} font-headline-md`}>
-                  Plot 14-A, Industrial Estate Phase II, Lahore, Pakistan
+                  Defence Road, Canal Bridge, Harbans Pura, Lahore, Punjab, Pakistan. (54000)
                 </p>
               </div>
               <div className={styles.hqFooter}>

@@ -11,7 +11,7 @@ export const StatsBar: React.FC = () => {
         </div>
         
         <div className={styles.statItem}>
-          <p className={`${styles.statValue} font-headline-lg`}>03</p>
+          <p className={`${styles.statValue} font-headline-lg`}>02</p>
           <p className={`${styles.statLabel} font-label-caps`}>Production Kilns</p>
         </div>
         

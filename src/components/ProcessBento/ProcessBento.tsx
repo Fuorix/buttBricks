@@ -18,7 +18,7 @@ export const ProcessBento = () => {
           />
           <div className={styles.overlay}></div>
           <div className={styles.featureContent}>
-            <h3 className={`${styles.featureTitle} font-headline-md`}>Jallo Area Operations</h3>
+            <h3 className={`${styles.featureTitle} font-headline-md`}>Lahore Operations</h3>
             <p className={`${styles.featureDesc} font-body-md`}>
               Our strategic location allows access to the finest alluvial clay, processed through our proprietary slow-fire method.
             </p>

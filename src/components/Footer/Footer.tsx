@@ -66,14 +66,14 @@ export const Footer: React.FC = () => {
             
             <div className={styles.contactItem}>
               <span className={`material-symbols-outlined ${styles.contactIcon}`}>mail</span>
-              <a href="mailto:info@buttbricks.com" className={styles.contactText}>info@buttbricks.com</a>
+              <a href="mailto:buttbricks@yahoo.com" className={styles.contactText}>buttbricks@yahoo.com</a>
             </div>
 
             <div className={styles.contactItem}>
               <span className={`material-symbols-outlined ${styles.contactIcon}`}>call</span>
               <div className={styles.phoneList}>
                 <a href="tel:+923219485444" className={styles.contactText}>+92 321 9485444</a>
-                <a href="tel:+923212222957" className={styles.contactText}>+92 321 2222957</a>
+                <a href="tel:+923281222957" className={styles.contactText}>+92 328 1222957</a>
                 <a href="tel:+923214001318" className={styles.contactText}>+92 321 4001318</a>
               </div>
             </div>

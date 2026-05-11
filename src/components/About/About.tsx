@@ -14,13 +14,13 @@ export const About: React.FC = () => {
             Founded by <strong>Muhammad Yaqoob Butt</strong>, the Butt Bricks Company has been at the forefront of Pakistan's industrial masonry for over four decades.
           </p>
           <p className={`${styles.description} ${styles.marginBottom} font-body-lg`}>
-            Operating from three state-of-the-art production kilns in Jallo, Lahore, we combine centuries-old craftsmanship with modern industrial precision to deliver bricks that are not just building materials, but a legacy of strength.
+            Operating from two state-of-the-art production kilns in Lahore, we combine centuries-old craftsmanship with modern industrial precision to deliver bricks that are not just building materials, but a legacy of strength.
           </p>
           
           <ul className={styles.featureList}>
             <li className={styles.featureItem}>
               <span className={`material-symbols-outlined ${styles.checkIcon}`}>check_circle</span>
-              <span>3 Specialized Kilns in Jallo</span>
+              <span>2 Specialized Kilns</span>
             </li>
             <li className={styles.featureItem}>
               <span className={`material-symbols-outlined ${styles.checkIcon}`}>check_circle</span>
