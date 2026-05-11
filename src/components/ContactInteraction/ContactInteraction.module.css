@@ -216,6 +216,36 @@
   font-size: 14px;
 }
 
+/* Red border on invalid inputs */
+.inputError {
+  border-color: #e53e3e !important;
+  outline-color: #e53e3e;
+}
+
+/* Inline field-level error message */
+.fieldError {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: #e53e3e;
+}
+
+/* Server/submission error (bottom of form) */
+.serverError {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: #e53e3e;
+  text-align: center;
+}
+
+/* Success message (already likely in your CSS, confirm it exists) */
+.successText {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: #38a169;
+  text-align: center;
+}
+
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
