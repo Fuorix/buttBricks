@@ -18,10 +18,10 @@ export const FounderVision: React.FC = () => {
         </div>
         <div className={styles.imageColumn}>
           <div className={styles.imageBackdrop}></div>
-          <img 
-            className={styles.image} 
-            alt="Close-up of artisan hands molding red clay with extreme precision and traditional tools in a sunlit workshop" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz7Q3xcitNavSK8urYeSW7-qMLmvTlKL3IJDE2sLwjnM1IdjS3tnORtQTDkSYEY6rJJ_nfEB2aH8X5ZuqWSaXGsKnUo03v_ld673AVkYjv0mpiF1pGWSKkSXpevJIe8poQQxcSsXIHJwET8Plo_w4VQWNR3w4nRDz6f00PLlxUnALePozQhBxrV5vR8xTOon0-3QK_qyZHEhKZJ1445XgGTvDIK0bpMfHvGuSXmn-TxXiDz-pzuTvCThDG_ZqLpYUF4IXIZppfVa99"
+          <img
+            className={styles.image}
+            alt="Haji M. Yaqoob Butt, Founder of Butt Bricks"
+            src="/leader01.jpg"
           />
         </div>
       </div>
