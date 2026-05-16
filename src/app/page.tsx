@@ -14,7 +14,7 @@ export default function Home() {
         <StatsBar />
         <Products />
         <About />
-        <Projects />
+<Projects />
         <Features />
         <Contact />
       </main>
