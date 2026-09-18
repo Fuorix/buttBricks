@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
       <div className={styles.heroContent}>
         <span className={styles.established}>Established 1979</span>
         <h1 className={`${styles.title} font-display-xl`}>
-          Pakistan's Premier Brick Manufacturer
+          Pakistan&apos;s Premier Brick Manufacturer
         </h1>
         <p className={`${styles.description} font-body-lg`}>
           Supplying architects, engineers and contractors with premium quality face bricks, floor designs and khaprail across Pakistan and the world.

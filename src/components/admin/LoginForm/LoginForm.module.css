@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.submit {
+  justify-content: center;
+  width: 100%;
+  padding: 14px 18px;
+  margin-top: 6px;
+}
+
+.submit .material-symbols-outlined {
+  font-size: 18px;
+}

@@ -6,7 +6,7 @@ export const StatsBar: React.FC = () => {
     <section className={styles.statsSection}>
       <div className={styles.statsContainer}>
         <div className={styles.statItem}>
-          <p className={`${styles.statValue} font-headline-lg`}>40+</p>
+          <p className={`${styles.statValue} font-headline-lg`}>45+</p>
           <p className={`${styles.statLabel} font-label-caps`}>Years of Excellence</p>
         </div>
         
@@ -16,7 +16,7 @@ export const StatsBar: React.FC = () => {
         </div>
         
         <div className={styles.statItem}>
-          <p className={`${styles.statValue} font-headline-lg`}>24+</p>
+          <p className={`${styles.statValue} font-headline-lg`}>25+</p>
           <p className={`${styles.statLabel} font-label-caps`}>Mega Projects</p>
         </div>
         

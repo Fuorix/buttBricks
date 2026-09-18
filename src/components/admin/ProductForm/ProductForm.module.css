@@ -1,0 +1,258 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionHeader {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-surface-container-high);
+}
+
+.sectionHeader a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.sectionHeader code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  background-color: var(--color-surface-container-high);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.checkboxField {
+  display: flex;
+  align-items: flex-end;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  width: 100%;
+  background-color: var(--color-surface-container-lowest);
+}
+
+.checkbox input {
+  margin-top: 3px;
+  accent-color: var(--color-primary);
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox > span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+}
+
+.mediaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mediaLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+}
+
+.mediaHint {
+  margin-bottom: 6px;
+}
+
+.fieldError {
+  color: var(--color-error);
+  font-size: 13px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 16px;
+  align-items: start;
+  padding: 16px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-default);
+  background-color: var(--color-surface-container-low);
+}
+
+.rowIndex,
+.iconPreview {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-default);
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-display);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 22px;
+}
+
+.iconPreview .material-symbols-outlined {
+  font-size: 24px;
+}
+
+.rowFields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  min-width: 0;
+}
+
+.spanTwo {
+  grid-column: span 2;
+}
+
+.spanFull {
+  grid-column: 1 / -1;
+}
+
+.rowControls {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 22px;
+}
+
+.removeBtn {
+  color: var(--color-error);
+}
+
+.removeBtn:hover:not(:disabled) {
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.relatedItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  background-color: var(--color-surface-container-lowest);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.relatedItem input {
+  margin-top: 3px;
+  accent-color: var(--color-primary);
+  width: 16px;
+  height: 16px;
+}
+
+.relatedItem:hover {
+  border-color: var(--color-outline);
+}
+
+.relatedChecked {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-fixed);
+}
+
+.relatedDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.relatedText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+}
+
+.relatedTitle {
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  bottom: 0;
+  padding: 16px 0;
+  background: linear-gradient(to top, var(--color-surface-container-low) 70%, transparent);
+}
+
+.footer .material-symbols-outlined {
+  font-size: 18px;
+}
+
+@media (max-width: 900px) {
+  .grid2,
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .rowIndex,
+  .iconPreview {
+    margin-top: 0;
+  }
+
+  .rowFields {
+    grid-template-columns: 1fr;
+  }
+
+  .spanTwo {
+    grid-column: auto;
+  }
+
+  .rowControls {
+    flex-direction: row;
+    margin-top: 0;
+  }
+}

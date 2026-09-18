@@ -9,7 +9,7 @@ export const CustomShapeCTA: React.FC = () => {
         <span className={`material-symbols-outlined ${styles.icon}`}>
           architecture
         </span>
-        <h2 className={`${styles.title} font-headline-lg`}>Can't find what you need?</h2>
+        <h2 className={`${styles.title} font-headline-lg`}>Can&apos;t find what you need?</h2>
         <p className={`${styles.description} font-body-lg`}>
           Our kiln masters and design engineers specialize in bespoke shapes and custom material densities for mega-scale architectural projects.
         </p>

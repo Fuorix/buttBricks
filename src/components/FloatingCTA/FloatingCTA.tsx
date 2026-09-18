@@ -12,7 +12,7 @@ export const FloatingCTA: React.FC<FloatingCTAProps> = ({ productTitle }) => {
       <Link href="/contact" className={styles.ctaButton}>
         <span className="material-symbols-outlined">chat</span>
         <span className={`${styles.ctaText} font-label-caps`}>
-          Get Quote for {productTitle}
+          Get Quote<span className={styles.ctaProduct}> for {productTitle}</span>
         </span>
       </Link>
     </div>

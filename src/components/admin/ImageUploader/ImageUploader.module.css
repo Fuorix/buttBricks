@@ -1,0 +1,188 @@
+.uploader {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.gridSingle {
+  grid-template-columns: minmax(150px, 260px);
+}
+
+.item {
+  position: relative;
+  margin: 0;
+  border-radius: var(--radius-default);
+  overflow: hidden;
+  border: 1px solid var(--color-outline-variant);
+  background-color: var(--color-surface-container-high);
+  aspect-ratio: 4 / 3;
+}
+
+.thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.itemBar {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 6px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.item:hover .itemBar,
+.item:focus-within .itemBar {
+  opacity: 1;
+}
+
+.itemBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-default);
+  background-color: rgba(255, 255, 255, 0.92);
+  color: var(--color-on-surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.itemBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.itemBtn .material-symbols-outlined {
+  font-size: 18px;
+}
+
+.itemRemove {
+  color: var(--color-error);
+}
+
+.firstTag {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 4px 8px;
+  border-radius: var(--radius-default);
+  font-size: 10px;
+}
+
+.pendingList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pendingItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-default);
+  background-color: var(--color-surface-container-high);
+  font-size: 13px;
+  color: var(--color-on-surface);
+}
+
+.pendingItem .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--color-primary);
+}
+
+.pendingError {
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+}
+
+.pendingError .material-symbols-outlined {
+  color: var(--color-error);
+}
+
+.pendingName {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pendingStatus {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.pendingDismiss {
+  background: transparent;
+  padding: 0;
+  display: inline-flex;
+  color: inherit;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 28px 16px;
+  border: 2px dashed var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface-container-low);
+  color: var(--color-secondary);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.dropzone:hover,
+.dropzone:focus-visible,
+.dropzoneActive {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-fixed);
+  outline: none;
+}
+
+.dropIcon {
+  font-size: 32px;
+  color: var(--color-primary);
+}
+
+.dropText {
+  font-weight: 600;
+  color: var(--color-on-surface);
+  font-size: 14px;
+}
+
+.dropHint {
+  font-size: 12px;
+}
+
+.input {
+  display: none;
+}

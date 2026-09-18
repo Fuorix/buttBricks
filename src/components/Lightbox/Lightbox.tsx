@@ -35,23 +35,23 @@ export const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, onClos
 
   return (
     <div className={styles.overlay} onClick={onClose}>
-      <button className={styles.close} onClick={onClose} aria-label="Close">
+      <button type="button" className={styles.close} onClick={onClose} aria-label="Close">
         <span className="material-symbols-outlined">close</span>
       </button>
 
-      <button className={`${styles.navBtn} ${styles.prevBtn}`} onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Previous">
+      <button type="button" className={`${styles.navBtn} ${styles.prevBtn}`} onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Previous">
         <span className="material-symbols-outlined">chevron_left</span>
       </button>
 
       <div className={styles.imageContainer} onClick={(e) => e.stopPropagation()}>
         <img
           src={images[currentIndex]}
-          alt={`Image ${currentIndex + 1}`}
+          alt={`Gallery image ${currentIndex + 1} of ${images.length}`}
           className={styles.image}
         />
       </div>
 
-      <button className={`${styles.navBtn} ${styles.nextBtn}`} onClick={(e) => { e.stopPropagation(); next(); }} aria-label="Next">
+      <button type="button" className={`${styles.navBtn} ${styles.nextBtn}`} onClick={(e) => { e.stopPropagation(); next(); }} aria-label="Next">
         <span className="material-symbols-outlined">chevron_right</span>
       </button>
 

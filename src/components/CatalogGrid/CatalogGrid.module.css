@@ -119,10 +119,12 @@
   color: var(--color-zinc-500, #6B7280);
   font-size: 11px;
   letter-spacing: 0.1em;
+  white-space: nowrap;
 }
 
 .detailsLink {
   display: flex;
+  white-space: nowrap;
   align-items: center;
   gap: 6px;
   color: var(--color-primary, #652B19);
@@ -162,4 +164,19 @@
     grid-template-columns: 1fr;
     gap: 24px;
   }
+}
+
+@media (max-width: 400px) {
+  .cardFooter {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .cardContent {
+    padding: 20px;
+  }
+}
+.emptyState {
+  text-align: center;
+  color: var(--color-secondary, #4B5563);
+  padding: 48px 0;
 }

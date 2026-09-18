@@ -52,3 +52,14 @@
     padding: 0 var(--space-gutter);
   }
 }
+
+@media (max-width: 480px) {
+  .filterGroup {
+    gap: 8px;
+  }
+  .filterButton {
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+}

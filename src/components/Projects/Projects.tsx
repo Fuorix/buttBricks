@@ -8,7 +8,7 @@ export const Projects: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <span className={`${styles.tagline} font-label-caps`}>Portfolio</span>
-          <h2 className={`${styles.title} font-headline-lg`}>Trusted by Pakistan's Biggest Projects</h2>
+          <h2 className={`${styles.title} font-headline-lg`}>Trusted by Pakistan&apos;s Biggest Projects</h2>
         </div>
         
         <div className={styles.grid}>

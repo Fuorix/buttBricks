@@ -1,0 +1,209 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-surface-container-low);
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background-color: var(--color-inverse-surface);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.brandRow {
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandLogo {
+  border-radius: var(--radius-default);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brandName {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+
+.brandSub {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-fixed-dim);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 12px;
+  flex: 1;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: var(--radius-default);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navLink .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.navLink:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--color-white);
+}
+
+.navActive {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.navActive:hover {
+  background-color: var(--color-primary-container);
+}
+
+.sidebarFooter {
+  padding: 16px 12px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.viewSite,
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-default);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 500;
+  background: transparent;
+  text-align: left;
+}
+
+.viewSite .material-symbols-outlined,
+.logout .material-symbols-outlined {
+  font-size: 18px;
+}
+
+.viewSite:hover,
+.logout:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--color-white);
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  min-width: 0;
+}
+
+.userIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.userEmail {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.contentInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 40px 80px;
+}
+
+@media (max-width: 900px) {
+  .shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .brandRow {
+    border-bottom: none;
+    padding: 14px 16px;
+  }
+
+  .nav {
+    flex-direction: row;
+    padding: 8px 12px;
+    flex: 1;
+    overflow-x: auto;
+  }
+
+  .navLink {
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+
+  .sidebarFooter {
+    flex-direction: row;
+    align-items: center;
+    border-top: none;
+    padding: 8px 12px;
+    margin-left: auto;
+  }
+
+  .user {
+    display: none;
+  }
+
+  .viewSite span:last-child,
+  .logout span:last-child {
+    display: none;
+  }
+
+  .contentInner {
+    padding: 28px 20px 60px;
+  }
+}

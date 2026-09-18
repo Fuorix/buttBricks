@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Serif } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header/Header";
-import { Footer } from "@/components/Footer/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,35 +12,46 @@ const notoSerif = Noto_Serif({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://buttbricks.com";
+
 export const metadata: Metadata = {
-  title: "Butt Bricks | Pakistan's Premier Brick Manufacturer",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Butt Bricks | Pakistan's Premier Brick Manufacturer",
+    template: "%s | Butt Bricks",
+  },
   description:
     "Supplying architects, engineers and contractors with premium quality face bricks, floor designs and khaprail across Pakistan and the world since 1979.",
   icons: {
-    icon: "/favicon.png", 
+    icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
 };
 
+/**
+ * Root layout: fonts, global CSS and the document shell only.
+ * The public site chrome (Header/Footer) lives in `(site)/layout.tsx`;
+ * the admin module has its own shell under `admin/`.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${notoSerif.variable} light`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${notoSerif.variable} light`}
+      data-scroll-behavior="smooth"
+    >
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

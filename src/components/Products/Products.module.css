@@ -65,13 +65,18 @@
 
 .image {
   object-fit: contain;
-  filter: grayscale(100%);
   transition: filter 0.5s ease, transform 0.7s ease;
 }
 
-.card:hover .image {
-  filter: grayscale(0%);
-  transform: scale(1.05);
+/* Grayscale-until-hover only where hover exists; touch devices see colour. */
+@media (hover: hover) {
+  .image {
+    filter: grayscale(100%);
+  }
+  .card:hover .image {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
 }
 
 .cardBadge {

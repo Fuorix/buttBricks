@@ -42,6 +42,9 @@ export const Header = () => {
     };
   }, [isMobileMenuOpen]);
 
+  const isActive = (href: string) =>
+    pathname === href || (href !== '/' && pathname.startsWith(`${href}/`));
+
   const navLinks = [
     { name: 'HOME', href: '/' },
     { name: 'PRODUCTS', href: '/products' },
@@ -80,7 +83,7 @@ export const Header = () => {
             <li key={link.href} className={styles.navItem}>
               <Link 
                 href={link.href} 
-                className={`${styles.navLink} ${pathname === link.href ? styles.active : ''}`}
+                className={`${styles.navLink} ${isActive(link.href) ? styles.active : ''}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -88,7 +91,7 @@ export const Header = () => {
             </li>
           ))}
           <li className={styles.mobileOnlyCta}>
-            <Link href="/quote" className={styles.ctaButton} onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/contact" className={styles.ctaButton} onClick={() => setIsMobileMenuOpen(false)}>
                <span className="material-symbols-outlined">construction</span>
                <span>GET A QUOTE</span>
             </Link>

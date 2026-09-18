@@ -1,0 +1,11 @@
+.wrap {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.error {
+  color: var(--color-error);
+  font-size: 12px;
+  max-width: 220px;
+}

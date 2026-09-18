@@ -8,7 +8,7 @@ export const Values = () => {
         <div className={styles.valueItem}>
           <span className={`material-symbols-outlined ${styles.icon}`} data-icon="verified">verified</span>
           <h4 className={`${styles.title} font-headline-md`}>QUALITY</h4>
-          <p className={`${styles.description} font-body-md`}>The uncompromising standard of 'Grade-A' masonry excellence.</p>
+          <p className={`${styles.description} font-body-md`}>The uncompromising standard of &lsquo;Grade-A&rsquo; masonry excellence.</p>
         </div>
         
         <div className={styles.valueItem}>

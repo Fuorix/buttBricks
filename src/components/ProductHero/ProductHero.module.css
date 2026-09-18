@@ -1,5 +1,4 @@
 .heroSection {
-  margin-top: 80px;
   padding-top: var(--space-stack-md);
   padding-bottom: var(--space-stack-md);
   width: 100%;
@@ -191,10 +190,6 @@
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .heroSection {
-    margin-top: 70px;
-  }
-
   .container {
     grid-template-columns: 1fr;
   }
@@ -221,5 +216,15 @@
   .inquireButton {
     padding: 16px 0;
     font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 34px;
+  }
+
+  .thumbnailGrid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

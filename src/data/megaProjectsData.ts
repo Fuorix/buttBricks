@@ -37,7 +37,7 @@ export const megaProjectsData: Project[] = [
   },
   {
     id: '5',
-    title: 'Lums University',
+    title: 'LUMS University',
     location: 'Lahore, Pakistan',
     category: 'Educational',
     image: '/mega-projects05.jpg'
@@ -58,14 +58,14 @@ export const megaProjectsData: Project[] = [
   },
   {
     id: '8',
-    title: 'Comsat University',
+    title: 'COMSATS University',
     location: 'Lahore, Pakistan',
     category: 'Educational',
     image: '/mega-projects08.jpg'
   },
   {
     id: '9',
-    title: 'Jammat Khana',
+    title: 'Jamaat Khana',
     location: 'Lahore, Pakistan',
     category: 'Infrastructure',
     image: '/mega-projects09.jpg'
@@ -135,7 +135,7 @@ export const megaProjectsData: Project[] = [
   },
   {
     id: '19',
-    title: 'Gadafi Stadium',
+    title: 'Gaddafi Stadium',
     location: 'Lahore, Pakistan',
     category: 'Infrastructure',
     image: '/mega-projects19.jpg'

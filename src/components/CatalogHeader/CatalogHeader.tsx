@@ -3,7 +3,8 @@ import styles from './CatalogHeader.module.css';
 
 export const CatalogHeader: React.FC = () => {
   return (
-    <section className={styles.catalogHeaderSection}>
+    <section className={styles.container}>
+      <div className={styles.catalogHeaderSection}>
       <div className={styles.content}>
         <span className={`${styles.tagline} font-label-caps`}>Our Portfolio</span>
         <h1 className={`${styles.title} font-display-xl`}>Our Collections</h1>
@@ -13,6 +14,7 @@ export const CatalogHeader: React.FC = () => {
       </div>
       <div className={styles.accentLineContainer}>
         <div className={styles.accentLine} />
+      </div>
       </div>
     </section>
   );

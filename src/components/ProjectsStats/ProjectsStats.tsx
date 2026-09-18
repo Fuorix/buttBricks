@@ -7,7 +7,7 @@ export const ProjectsStats = () => {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.statItem}>
-            <p className={`${styles.value} font-headline-lg`}>50+</p>
+            <p className={`${styles.value} font-headline-lg`}>25+</p>
             <p className={`${styles.label} font-label-caps`}>Mega Projects</p>
           </div>
           <div className={styles.statItem}>
@@ -15,7 +15,7 @@ export const ProjectsStats = () => {
             <p className={`${styles.label} font-label-caps`}>Bricks Laid</p>
           </div>
           <div className={styles.statItem}>
-            <p className={`${styles.value} font-headline-lg`}>40</p>
+            <p className={`${styles.value} font-headline-lg`}>45+</p>
             <p className={`${styles.label} font-label-caps`}>Years Legacy</p>
           </div>
           <div className={styles.statItem}>

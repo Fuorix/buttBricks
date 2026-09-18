@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './TechnicalSpecs.module.css';
-import { SpecItem } from '@/data/productListData';
+import type { SpecItem } from '@/lib/types';
 
 interface TechnicalSpecsProps {
   specs: SpecItem[];

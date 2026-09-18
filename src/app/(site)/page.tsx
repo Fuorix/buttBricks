@@ -5,19 +5,20 @@ import { About } from '@/components/About/About';
 import { Projects } from '@/components/Projects/Projects';
 import { Features } from '@/components/Features/Features';
 import { Contact } from '@/components/Contact/Contact';
+import { getFeaturedProducts } from '@/lib/data/catalog';
 
-export default function Home() {
+export default async function Home() {
+  const featured = await getFeaturedProducts();
+
   return (
-    <>
-      <main>
-        <Hero />
-        <StatsBar />
-        <Products />
-        <About />
-<Projects />
-        <Features />
-        <Contact />
-      </main>
-    </>
+    <main>
+      <Hero />
+      <StatsBar />
+      <Products products={featured.slice(0, 6)} />
+      <About />
+      <Projects />
+      <Features />
+      <Contact />
+    </main>
   );
 }

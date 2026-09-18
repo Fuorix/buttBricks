@@ -10,7 +10,7 @@ export const ProjectsHeader = () => {
             <p className={`${styles.tagline} font-label-caps`}>Portfolio of Excellence</p>
             <h1 className={`${styles.title} font-display-xl`}>Architectural Landmarks</h1>
             <p className={`${styles.subtitle} font-headline-md`}>
-              A legacy etched in Pakistan's skyline.
+              A legacy etched in Pakistan&apos;s skyline.
             </p>
           </div>
           <div className={styles.accentLineContainer}>

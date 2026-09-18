@@ -104,4 +104,27 @@
   .header {
     margin-bottom: 16px;
   }
+
+  .table {
+    min-width: 0;
+  }
+
+  .tableHeader {
+    padding: 0 8px 12px 0;
+    white-space: normal;
+  }
+
+  .tableCell {
+    padding: 12px 8px 12px 0;
+    font-size: 14px;
+    vertical-align: top;
+  }
+
+  .specName {
+    width: 34%;
+  }
+
+  .textSecondary {
+    font-size: 12px;
+  }
 }

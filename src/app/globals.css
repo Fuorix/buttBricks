@@ -69,7 +69,7 @@
 
   /* Header Spacing Logic */
   --header-height: 80px;
-  --header-height-mobile: 64px;
+  --header-height-mobile: 70px;
 
   /* Typography */
   --font-family-display: "Noto Serif", serif;
@@ -111,7 +111,7 @@ main {
   padding-top: var(--header-height);
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 768px) {
   main {
     padding-top: var(--header-height-mobile);
   }

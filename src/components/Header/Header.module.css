@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; 
+  height: var(--header-height);
   background-color: var(--color-zinc-900);
   z-index: 1000;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -178,7 +178,7 @@
 
 @media (max-width: 768px) {
   .header {
-    height: 70px;
+    height: var(--header-height-mobile);
   }
 
   .nav {
@@ -208,7 +208,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     opacity: 0;
@@ -226,12 +226,15 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
-    height: 100vh;
+    width: min(280px, 85vw);
+    height: 100dvh;
+    overflow-y: auto;
     background-color: var(--color-zinc-900);
     flex-direction: column;
     padding: 80px 32px;
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Hidden and unfocusable while closed; visibility flips after the slide-out finishes. */
+    visibility: hidden;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.4s;
     z-index: 1060;
     align-items: flex-start;
     justify-content: flex-start;
@@ -243,6 +246,8 @@
 
   .navLinks.mobileOpen {
     right: 0;
+    visibility: visible;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s;
   }
 
   .navItem {

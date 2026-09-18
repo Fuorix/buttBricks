@@ -80,6 +80,26 @@
   right: 20px;
 }
 
+@media (max-width: 600px) {
+  .image,
+  .imageContainer {
+    max-width: 94vw;
+    max-height: 72vh;
+  }
+  .navBtn {
+    top: auto;
+    bottom: 56px;
+    transform: none;
+    padding: 8px;
+  }
+  .navBtn span {
+    font-size: 30px;
+  }
+  .prevBtn { left: 16px; }
+  .nextBtn { right: 16px; }
+  .close { top: 12px; right: 12px; }
+}
+
 .counter {
   position: absolute;
   bottom: 24px;

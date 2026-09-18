@@ -1,7 +1,7 @@
 .relatedSection {
   padding-top: var(--space-stack-lg);
-  padding-bottom: var(--space-stack-xl);
-  margin-bottom: 80px;
+  padding-bottom: var(--space-stack-lg);
+  margin-bottom: 0;
   width: 100%;
 }
 

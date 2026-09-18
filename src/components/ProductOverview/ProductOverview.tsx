@@ -1,12 +1,14 @@
 import React from 'react';
 import styles from './ProductOverview.module.css';
-import { ProductDetail } from '@/data/productListData';
+import type { Product } from '@/lib/types';
 
 interface ProductOverviewProps {
-  product: ProductDetail;
+  product: Product;
 }
 
 export const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
+  if (product.narrative.length === 0) return null;
+
   return (
     <section className={styles.overviewSection}>
       <div className={styles.container}>

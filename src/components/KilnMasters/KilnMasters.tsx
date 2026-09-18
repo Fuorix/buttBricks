@@ -16,7 +16,7 @@ export const KilnMasters = () => {
         <div className={styles.contentColumn}>
           <h2 className={`${styles.title} font-headline-lg`}>Masters of the Flame</h2>
           <p className={`${styles.description} font-body-lg`}>
-            Behind every shipment are our 'Kiln Masters' artisans who possess a multi-generational understanding of temperature and texture. We pair their intuition with high-precision structural engineers to bridge the gap between art and infrastructure.
+            Behind every shipment are our &lsquo;Kiln Masters&rsquo; artisans who possess a multi-generational understanding of temperature and texture. We pair their intuition with high-precision structural engineers to bridge the gap between art and infrastructure.
           </p>
           
           <div className={styles.list}>

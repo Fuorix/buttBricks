@@ -11,7 +11,7 @@ export const About: React.FC = () => {
           <div className={styles.divider} />
           
           <p className={`${styles.description} font-body-lg`}>
-            Founded by <strong>Muhammad Yaqoob Butt</strong>, the Butt Bricks Company has been at the forefront of Pakistan's industrial masonry for over four decades.
+            Founded by <strong>Muhammad Yaqoob Butt</strong>, the Butt Bricks Company has been at the forefront of Pakistan&apos;s industrial masonry for over four decades.
           </p>
           <p className={`${styles.description} ${styles.marginBottom} font-body-lg`}>
             Operating from two state-of-the-art production kilns in Lahore, we combine centuries-old craftsmanship with modern industrial precision to deliver bricks that are not just building materials, but a legacy of strength.
