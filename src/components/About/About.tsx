@@ -37,7 +37,7 @@ export const About: React.FC = () => {
           <div className={styles.imageAccent} />
           <img 
             className={styles.image} 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEQ2R8LIPAAPGRc2briiHadzrK_uw3041rz4hv_etUfpqTnTQBrMZgaAj5m9A4men5A3MI9QLhC5BZNX1gNA-1hTPA8THLa6D-1bG4tBeMRB1GHuIjOtdpIfy4AsA6jK-ggeBBjwPPAv7kgj6rLBiPuQFEMdqQj2AfQavhWckQejtkEwHUf67m7LcGDPWNK6RUxrlV3tOiyhdB7RxCn018LO8B8A2ebghRaF9AI9zH-4WYHBRBzvf3tJbOf8XYhBJncNFnRJVw30kQ" 
+            src="/about-factory.jpg" 
             alt="Wide shot of an industrial brick kiln facility at sunset with smoke stacks and rows of cooling bricks" 
             loading="lazy"
           />

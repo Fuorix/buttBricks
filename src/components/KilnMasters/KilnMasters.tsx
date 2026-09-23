@@ -9,7 +9,7 @@ export const KilnMasters = () => {
           <img 
             className={styles.image} 
             alt="Professional engineer and an elderly master craftsman discussing blueprints at a construction site with heavy brickwork" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0yiOxt-7QJ7eukmnU54a1S0mnSBaODJsS4h62pOtDPgAf03JMeHmdIGmrDGfHCxiKpoZ5DFAfHv1dXFWO_pr29CrkJXLNLnUEL5HwJ823u8bp1LjRtR7-Y179Lz75ao5WuWdQmD2f-alWo7qBP0tYuqjBWjulIq9W2AeGG0tCNnJxFrxGLiFSGtV_0OTi3BjJX2IPQntj78T_VlVNns9S_qB-kapoaSps5GHPDzjCahnHt5lN2vKJadj7zBKxt4tmXavNbqXQCeCj"
+            src="/kiln-masters.jpg"
           />
         </div>
         

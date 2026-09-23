@@ -131,6 +131,11 @@ export const Contact: React.FC = () => {
 
         <div className={styles.formColumn}>
           <form onSubmit={handleSubmit} className={styles.form} noValidate>
+            {/* Anti-spam honeypot: hidden from people, tempting to bots. */}
+            <div className="honeypot" aria-hidden="true">
+              <label htmlFor="home-company-website">Do not fill this in</label>
+              <input id="home-company-website" type="text" name="company_website" tabIndex={-1} autoComplete="off" />
+            </div>
 
             <div className={styles.formGroup}>
               <label htmlFor="home-name" className={`${styles.label} font-label-caps`}>Full Name</label>

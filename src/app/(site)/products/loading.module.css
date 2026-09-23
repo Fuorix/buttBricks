@@ -1,0 +1,112 @@
+/* Catalog skeleton. Mirrors CatalogHeader + CatalogGrid so the layout does
+   not shift when the real content streams in. */
+
+.page {
+  background-color: var(--color-background);
+}
+
+.container {
+  max-width: var(--space-container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-margin);
+}
+
+.header {
+  padding: 64px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding-bottom: 100px;
+}
+
+.card {
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.thumb {
+  aspect-ratio: 4 / 3;
+}
+
+.cardBody {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Shimmer primitive */
+.shimmer {
+  background-color: var(--color-surface-container-high);
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--color-white) 55%, transparent) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: var(--radius-default);
+}
+
+.lineLabel {
+  height: 12px;
+  width: 140px;
+}
+
+.lineTitle {
+  height: 48px;
+  width: min(420px, 80%);
+}
+
+.lineBody {
+  height: 14px;
+  width: 100%;
+}
+
+.lineBodyShort {
+  height: 14px;
+  width: 60%;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer {
+    animation: none;
+    background-image: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-gutter);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

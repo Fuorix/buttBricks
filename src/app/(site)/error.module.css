@@ -1,0 +1,90 @@
+.page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background);
+}
+
+.content {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 80px var(--space-gutter);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.tagline {
+  color: var(--color-primary);
+}
+
+.title {
+  color: var(--color-on-surface);
+}
+
+.description {
+  color: var(--color-secondary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: var(--radius-default);
+  font-family: var(--font-family-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.primaryButton {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: none;
+}
+
+.primaryButton:hover {
+  background-color: var(--color-primary-container);
+}
+
+.secondaryButton {
+  border: 1px solid var(--color-outline-variant);
+  color: var(--color-on-surface);
+}
+
+.secondaryButton:hover {
+  background-color: var(--color-surface-container-high);
+}
+
+.digest {
+  margin-top: 8px;
+  font-family: var(--font-family-body);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--color-zinc-500);
+  word-break: break-all;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 56px var(--space-stack-sm);
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}

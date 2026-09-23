@@ -1,8 +1,27 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaFacebook, FaInstagram, FaXTwitter, FaLinkedin } from 'react-icons/fa6';
+import { FaFacebook, FaXTwitter, FaLinkedin } from 'react-icons/fa6';
 import styles from './Footer.module.css';
+
+/**
+ * Social profiles. Add an entry only when the real profile URL is known;
+ * an icon with no destination is worse than no icon at all.
+ * TODO(client): supply the Instagram profile URL and re-add FaInstagram here.
+ */
+const socialLinks = [
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/buttbrickscompany/',
+    Icon: FaFacebook,
+  },
+  { label: 'X', href: 'https://x.com/buttbricks', Icon: FaXTwitter },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/buttbricks/',
+    Icon: FaLinkedin,
+  },
+] satisfies { label: string; href: string; Icon: typeof FaFacebook }[];
 
 export const Footer: React.FC = () => {
   return (
@@ -26,19 +45,18 @@ export const Footer: React.FC = () => {
             </p>
             
             <div className={styles.social}>
-              {/* 2. Use the icons simply like this */}
-              <a href="https://web.facebook.com/buttbrickscompany/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Facebook">
-                <FaFacebook size={20} />
-              </a>
-              <a href="#" className={styles.socialLink} aria-label="Instagram">
-                <FaInstagram size={20} />
-              </a>
-              <a href="https://x.com/buttbricks" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Twitter">
-                <FaXTwitter size={20} />
-              </a>
-              <a href="https://www.linkedin.com/in/buttbricks/?_l=en_US" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
-                <FaLinkedin size={20} />
-              </a>
+              {socialLinks.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label={label}
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
             </div>
           </div>
           
@@ -85,7 +103,8 @@ export const Footer: React.FC = () => {
       <div className={styles.bottomSection}>
         <div className={styles.container}>
           <p className={`${styles.copyright} font-label-caps`}>
-            © 2026 Butt Bricks Company - Butt Brothers Bricks Company. Built to Last.
+            © {new Date().getFullYear()} Butt Bricks Company - Butt Brothers Bricks
+            Company. Built to Last.
           </p>
         </div>
       </div>

@@ -214,3 +214,13 @@ input, textarea {
   vertical-align: middle;
   display: inline-block;
 }
+/* Honeypot: off-screen for humans, still filled in by naive bots.
+   Not display:none, because some bots skip hidden fields. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}

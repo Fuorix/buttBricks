@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './Hero.module.css';
 
 export const Hero: React.FC = () => {
-  const brickImageUrl = "https://lh3.googleusercontent.com/aida-public/AB6AXuApNfdTZB5hVvbxAnDbXqNjRH_77M6Mpy7ESnOuA4rFfXE2zDeTEgB3JU9KQ8dL4Vy6knD0eNoUSlkfC7srG7uLfZgCYbZhSh10jvHBvkMFkatWp6a951YemIIw9_TGUGN8xKjnDs-VkYSpFvi9KYsSv8eT6oBHOmy85X2JzPzW7TKykeTDWuWYUlcp75gvUGj1sdJQIH-r5EULXthJ_mzPt6At0LGMQdstmgh51Ite63xabX0TQJqQnMEtvm4NDe4vQFg7PVaRw_mr";
+  const brickImageUrl = "/hero-brick-wall.jpg";
 
   return (
     <section className={styles.heroSection}>

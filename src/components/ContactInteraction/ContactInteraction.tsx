@@ -108,6 +108,17 @@ export const ContactInteraction: React.FC = () => {
           <div className={styles.formColumn}>
             <h2 className={`${styles.formTitle} font-headline-md`}>Technical Inquiry Form</h2>
             <form className={styles.form} onSubmit={handleSubmit} noValidate>
+              {/* Anti-spam honeypot: hidden from people, tempting to bots. */}
+              <div className="honeypot" aria-hidden="true">
+                <label htmlFor="contact-company-website">Do not fill this in</label>
+                <input
+                  id="contact-company-website"
+                  type="text"
+                  name="company_website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
 
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>

@@ -14,7 +14,7 @@ export const ProcessBento = () => {
           <img 
             className={styles.image} 
             alt="Vast industrial masonry yard with thousands of perfectly stacked terracotta bricks" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkdON-AbCsH1BtKB-Y9WP0Iql2ZGM5OA5n1vY36jzJpKTvm9nHlmVXsyMIC7PH4zDwz7wZ__Yn_-VcIosvm1OKrNy4lKt10kWtyeugyiWjrZQEwgkBD7qbgxXrdRJJeBlu9RdlKLbPdIBv8yCTRKnnDFdPEG56FaOjnSRaNHakiq8Q0hnBqs9VKOLnaFT1GIqvpw60cjTyq245V0kfnooTQreE2-rAqIMii2p0V0XZlVdoHK0xV2yCkyYGJ54Y8I_h3LqXKy4UE9vV"
+            src="/process-bento.jpg"
           />
           <div className={styles.overlay}></div>
           <div className={styles.featureContent}>
