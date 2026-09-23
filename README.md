@@ -118,3 +118,4 @@ firestore.rules           deny-all client rules
 next.config.ts            security headers, image hosts
 DEPLOYMENT.md             full setup, deploy and handover runbook
 ```
+ 
