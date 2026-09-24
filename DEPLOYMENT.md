@@ -489,13 +489,14 @@ The Resend domain is not verified, or `CONTACT_FROM_EMAIL` is not on the verifie
 Confirm the three Cloudinary variables in Vercel match the dashboard. The uploader signs requests on the server, so a wrong secret fails the upload rather than the display.
 
 **Admin login returns a 500 and the page shows "Something went wrong".**
-Check the Vercel runtime log. If it says `ERR_REQUIRE_ESM` for `jose` via
-`jwks-rsa`, the function is on a Node version older than 22.12. `firebase-admin`
-pulls in a CommonJS package that requires an ESM-only module, which only works on
-Node 22.12 and above. The `engines.node` field in `package.json` pins this, and it
-overrides the dashboard setting. If needed, set **Settings → Node.js Version** to
-22.x and redeploy. Note the build succeeds either way, because only the admin
-login imports `firebase-admin/auth`.
+If the Vercel runtime log shows `ERR_REQUIRE_ESM` for `jose` via `jwks-rsa`, this
+is the known dependency conflict. `firebase-admin` pulls in `jwks-rsa`, which is
+CommonJS and calls `require('jose')`, but `jose` 6 is ESM-only. `package.json`
+pins `jose` to the 4.x line through an `overrides` entry, because 4.x ships a
+CommonJS build. Do not remove that override while `jwks-rsa` still uses `require`.
+Note the build succeeds either way: prerendering only touches
+`firebase-admin/firestore`, and the admin login is the first code path to import
+`firebase-admin/auth`.
 
 **A product edit does not appear on the public site.**
 Hard-refresh once to rule out the browser cache. If it persists, redeploy, which rebuilds every page.
